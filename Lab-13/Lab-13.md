@@ -98,7 +98,7 @@ The main tasks for this exercise are as follows:
 
 3.  Create an instance of **Logic App** with the following settings:
 
-    -   Resource group: a new resource group named **AZ-303Lab-13**
+    -   Resource group: a new resource group named **AZ-304Lab-13**
 
     -   Name: **LogApp-13**
 
@@ -123,7 +123,7 @@ The main tasks for this exercise are as follows:
    ```sh
 $password = '1q2w3e4r5t6y*'
 $securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
-$aadApp30313 = New-AzADApplication -DisplayName 'aadApp30413' -HomePage 'http://aadApp30413' -IdentifierUris 'http://aadApp30413' -Password $securePassword
+$aadApp30413 = New-AzADApplication -DisplayName 'aadApp30413' -HomePage 'http://aadApp30413' -IdentifierUris 'http://aadApp30413' -Password $securePassword
    ```
 
 3.  From the Cloud Shell pane, run the following to create a new Azure
@@ -131,7 +131,7 @@ $aadApp30313 = New-AzADApplication -DisplayName 'aadApp30413' -HomePage 'http://
     the previous step:
 
  ```sh
-New-AzADServicePrincipal -ApplicationId $aadApp30313.ApplicationId.Guid
+New-AzADServicePrincipal -ApplicationId $aadApp30413.ApplicationId.Guid
  ```
 
 4.  In the output of the **New-AzADServicePrincipal** command, note the
@@ -165,7 +165,7 @@ Get-AzSubscription
 4.  On the Subscription blade, click **Access control (IAM)**.
 
 5.  Click **+Add** and Assign the **Reader** role, select
-    **aadApp30313** service principal to assign the role to.
+    **aadApp30413** service principal to assign the role to.
 
 6.  Click **Save**
 
@@ -201,7 +201,7 @@ The main tasks for this exercise are as follows:
 #### Task 1: Add a trigger to the Azure logic app
 
 1.  In the Azure portal, navigate to the newly created Resource group
-    AZ-303Lab-13.
+    AZ-304Lab-13.
 
 2.  Open the **Logic App Designer** blade of the newly provisioned Azure
     logic app.
@@ -218,7 +218,7 @@ The main tasks for this exercise are as follows:
     Principal** link, specify the following values, and
     click **Create**:
 
-    -   Connection Name: **eg30313**
+    -   Connection Name: **eg30413**
 
     -   Client ID: the **ApplicationId** property you identified in the
         previous exercise
