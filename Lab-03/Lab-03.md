@@ -277,8 +277,7 @@ The main tasks for this exercise are as follows:
    2. **Target Environment**
 
       - **Subscription**
-        - You can even choose a different subscription, alas it is
-              under the same **Tenancy**
+        - You can choose any subscription, alas under the same **Tenancy**
 
       - **Post-Failover Resource Group**
         - Choose the RG. **Lab-03-Migrated** for this exercise. This menu does not allow you to create a new RG. You can
@@ -300,7 +299,7 @@ The main tasks for this exercise are as follows:
         - Choose OS Type as Windows. (this is for drivers for that OS) and click **Next**
          
    5. **Replication Policy**
-        - Leave the default selected Replication Policy and click **Next** 
+        - Leave the default selected Replication Policy (this is the one we created the one with immediately) and click **Next** 
    
    6. **Review**
         - Review the settings and click **Enable Replication**
