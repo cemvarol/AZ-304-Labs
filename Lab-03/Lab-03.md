@@ -120,8 +120,12 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 
 1.  Navigate to newly created Resource Group and click the Traffic Manager **Lab-09-TM**
 2.  On the overview page you will see 2 Endpoints
-    - Onprem  --  Monitor Status Online
-    - Migrated  --  Monitor Status Degraded
+       
+    | Name | Status | Monitor Status |
+    | --- | --- |--- |
+    | Onprem | Enabled | **Online**|
+    |Migrated | Enabled |**Degraded**|
+    
 2.  Copy the **DNS Name** and visit that URL on a new tab on your browser
 3.  Ensure that the page welcomes you with the current date
 
