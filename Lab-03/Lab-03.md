@@ -28,7 +28,7 @@ While databases, web apps, and virtual desktops are in scope of the next stage o
 
 After completing this lab, you will be able to:
 
--  Prepare Hyper-V for assessment and migration by using Azure Migrate
+-  Prepare Hyper-V for migration by using Azure Migrate
 
 -  Assess Hyper-V for migration by using Azure Migrate
 
