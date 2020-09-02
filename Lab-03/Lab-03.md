@@ -28,13 +28,11 @@ While databases, web apps, and virtual desktops are in scope of the next stage o
 
 After completing this lab, you will be able to:
 
--   Configure Azure Site Recovery
+-  Prepare Hyper-V for assessment and migration by using Azure Migrate
 
--   Perform test failover
+-  Assess Hyper-V for migration by using Azure Migrate
 
--   Perform planned failover
-
--   Perform unplanned failover
+-  Migrate Hyper-V VMs by using Azure Migrate
 
 ## Lab Environment
 
