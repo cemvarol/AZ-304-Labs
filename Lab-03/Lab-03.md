@@ -222,13 +222,15 @@ The main tasks for this exercise are as follows:
         
    
    2. **Source Settings**
-        - Hyper-V Site: **QA-London**
-        - Hyper-V Servers
+        - Are you Using System Center VMM to manage Hyper-V hosts?
+            - No
+        - Add Hyper-V Site: **QA-London**
+        - Hyper-V Servers:
           -  Click **Add Hyper-V Server**
       
-                -   Click download the installer to download the installer
+                -   Click download the installer to download the installer on **Step 3**
       
-                -   Click the big blue button to download the registration file
+                -   Click the Big Blue **Download** Button to download the registration file
 
           - Launch the downloaded **AzureSiteRecoveryProvider.exe** file. This will start the installation wizard.
       
@@ -236,9 +238,11 @@ The main tasks for this exercise are as follows:
       
           - On the Provider installation page, select **Install**.
 
-          - Click **Register** when the wizard asks. Select Browse, navigate to the **Downloads**, select the *vault credentials file*, and click **Open**.
+          - Click **Register** when the wizard asks. Select Browse, navigate to the **Downloads**, select the *vault credentials file*, and click **Open**. Complete the rest of the steps on the wizard with default selections.
           
           - Click **Finish** when the installation completes
+         
+> Note: If your host, **Migrator** does not appear, refresh the page and reach to this level again.
        
    3.  **Target Settings**
         - This Automatically chooses the existing subscription and checks if you have available storage account at the location. Leave with the default setting. Click **Next**.
