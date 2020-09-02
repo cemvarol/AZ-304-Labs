@@ -72,7 +72,7 @@ The main tasks for this exercise are as follows:
 3.  In the toolbar of the Cloud Shell pane, run the following command to create the vm.
 
 ```sh
-curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-13/Lab-13-Resources.bash\
+curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-13/Lab-13-Resources.bash
 ls -la Lab-13-Resources.bash
 chmod +x Lab-13-Resources.bash
 ./Lab-13-Resources.bash
