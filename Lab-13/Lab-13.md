@@ -224,10 +224,29 @@ The main tasks for this exercise are as follows:
 
 8.   Type *event-subscription-az304Lab13* as Subscription Name and select **Save**
 
-#### Task 2: Add an action to the Azure logic app
+#### Task 3: Add a condition to the Azure logic app
 
-1.  On the Logic App Designer blade of the newly provisioned Azure logic
-    app, click **+ New step**.
+1. Select **+ New step**. 
+
+1. In the choose an action tile, search for **Condition**, select **Condition**  under *Actions*.
+
+1. When Condition box appears, click the ellipsis symbol in the upper right corner select **Rename**, and replace **Condition** with the text **If a virtual machine in the resource group has changed**. 
+
+1. Select the **Choose a value** text box, in the pop up window, select **Expression** tab and enter the expression below, and click **OK**
+
+   ```
+   triggerBody()?['data']['operationName']
+   ```
+
+1. Ensure that **is equal to** appears in the middle element of the condition and, in the **Choose a value** text box, type the value below, and click **Save**
+
+   ```
+   Microsoft.Compute/virtualMachines/write
+   ```
+
+#### Task 3: Add an action to the Azure logic app
+
+1.  On the Logic App Designer on Condition box, Under **If True**,  click **Add an Action**.
 
 2.  In the **Choose an action** pane, in the **Search connectors and
     actions** text box, type **Outlook**.
