@@ -25,6 +25,8 @@ netsh routing ip nat add interface $ExternalInterface
 netsh routing ip nat set interface $ExternalInterface mode=full
 netsh routing ip nat add interface $InternalInterface
 
+Netsh routing IP NAT add portmapping name= $ExternalInterface tcp 0.0.0.0 80 1.1.1.2 80
+
 Start-Sleep -s 3
 
 Start-Process Powershell.exe -Argumentlist "-file C:\SC\2-VhdsNChrome.ps1"
