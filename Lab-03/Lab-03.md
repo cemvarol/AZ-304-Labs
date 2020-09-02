@@ -399,6 +399,8 @@ The main tasks for this exercise are as follows:
 
 5.  From the Cloud Shell pane, run the following to list the resource
     group you created in this exercise:
+    
+6.  After both deleted, follow the steps below.
 
 ```sh
 az group list \--query \"\[?contains(name,\'Lab-09\')\]\".name --output tsv
