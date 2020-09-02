@@ -54,6 +54,30 @@ used in this lab. Outlook will verify your account, to be able to send
 emails. This will be necessary in this lab.\
 Please do not skip this step.
 
+### Exercise 0: Prepare the lab environment
+
+The main tasks for this exercise are as follows:
+
+1.  Deploy an Azure VM for the Lab
+
+#### Task 1: Deploy an Azure VM for the Lab
+
+1.  Open [**Cloud Shell**](https://shell.azure.com) pane by selecting on
+    the toolbar icon directly to the right of the search textbox.
+
+2.  If prompted, select **Bash** .
+
+> **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab,  and select **Create storage**.
+
+3.  In the toolbar of the Cloud Shell pane, run the following command to create the vm.
+
+```sh
+curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-13/Lab-13-Resources.bash\
+ls -la Lab-13-Resources.bash
+chmod +x Lab-13-Resources.bash
+./Lab-13-Resources.bash
+```
+
 ### Exercise 1: Set up the lab environment that consists of an Azure storage account and an Azure logic app
 
 The main tasks for this exercise are as follows:
