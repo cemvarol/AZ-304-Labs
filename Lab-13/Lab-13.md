@@ -110,7 +110,7 @@ The main tasks for this exercise are as follows:
 
 5.  After validated click **Create**
 
-6.  Wait until the app is provisioned. This will take about a minute.
+6.  Do not wait until the app is provisioned. This will take 1-2 minutes.
 
 #### Task 2: Create an Azure AD service principal
 
