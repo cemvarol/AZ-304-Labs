@@ -119,7 +119,7 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 #### Task 3: Check the output
 
 1.  Navigate to newly created Resource Group and click the Traffic Manager **Lab-09-TM**
-2.  On the overview page you will see 2 Endpoints
+2.  On the overview page you will see 2 Endpoints. Ensure that Onprem is Online, and Migrated is Degraded.
        
     | Name | Status | Monitor Status |
     | --- | --- |--- |
@@ -131,6 +131,7 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 
 > **Note:** If fails please ask for support, this will be needed for the next exercises.
 
+> #### Result: We created a server hosting 2012-R2 VM. This vm is published to internet with its dns name and that name is behind a Traffic Manager. When a client visits the Traffic Manager URL, they will be diverted to use the 2012-R2 guest vm on the on-prem host.When the Lab completed, 2012-R2 VM will be migrated to Azure and Traffic Manager will show vise-versa, but the page will be still available.
 
 ### Exercise 1: Create and configure an Azure Site Recovery vault
 
