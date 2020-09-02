@@ -244,10 +244,12 @@ The main tasks for this exercise are as follows:
          
 > Note: If your host, **Migrator** does not appear, refresh the page and reach to this level again.
        
-    3.  **Target Settings**
-            - This Automatically chooses the existing subscription and checks if you have available storage account at the location. Leave with the default setting. Click **Next**.
+    
+   3. **Target Settings**
+         - This Automatically chooses the existing subscription and checks if you have available storage account at the location. Leave with the default setting. Click **Next**.
         
-    4.  **Replication Policy**
+    
+   4. **Replication Policy**
          - **Create new policy and associate**. (Leave default settings, ensure you assign a Name and set initial Replication as **Immediately**)
          - Name: Provide a name e.g: **Rep-Pol**
            - Copy Frequency
@@ -256,7 +258,7 @@ The main tasks for this exercise are as follows:
            - Initial Replication start time: **Immediately**	
             - Click **Next** after completed	
             
-    5.  **Review**  
+       5. **Review**  
           * Click **Prepare**	
 4. This will divert you back to **BCDR \| Site Recovery** blade. Else, navigate yourself.
 
