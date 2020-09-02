@@ -241,6 +241,7 @@ The main tasks for this exercise are as follows:
           - Click **Register** when the wizard asks. Select Browse, navigate to the **Downloads**, select the *vault credentials file*, and click **Open**. Complete the rest of the steps on the wizard with default selections.
           
           - Click **Finish** when the installation completes
+          > **Note:** If your host, **Migrator** does not appear, refresh the page and reach to this level again.
     
    3. **Target Settings**
          - This Automatically chooses the existing subscription and checks if you have available storage account at the location. Leave with the default setting. Click **Next**.
@@ -255,7 +256,7 @@ The main tasks for this exercise are as follows:
            - Initial Replication start time: **Immediately**	
             - Click **Next** after completed	
             
-       5. **Review**  
+     5. **Review**  
           * Click **Prepare**	
 4. This will divert you back to **BCDR \| Site Recovery** blade. Else, navigate yourself.
 
