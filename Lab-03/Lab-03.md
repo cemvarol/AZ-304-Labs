@@ -52,6 +52,8 @@ The main tasks for this exercise are as follows:
 
 2.  Configure nested virtualization in the Azure VM
 
+3.  Check the output
+
 #### Task 1: Deploy an Azure VM for the Lab
 
 1.  Open [**Cloud Shell**](https://shell.azure.com) pane by selecting on
@@ -112,6 +114,19 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 8.  After Restart, sign in by using the newly set password.
 
 -   Note: Your Guest Vm will be restarted once more automatically and will be ready after this step.
+
+
+#### Task 3: Check the output
+
+1.  Navigate to newly created Resource Group and click the Traffic Manager **Lab-09-TM**
+2.  On the overview page you will see 2 Endpoints
+    - Onprem  --  Monitor Status Online
+    - Migrated  --  Monitor Status Degraded
+2.  Copy the **DNS Name** and visit that URL on a new tab on your browser
+3.  Ensure that the page welcomes you with the current date
+
+> **Note:** If fails please ask for support, this will be needed for the next exercises.
+
 
 ### Exercise 1: Create and configure an Azure Site Recovery vault
 
