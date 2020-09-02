@@ -101,8 +101,8 @@ $output = "C:\Lab03\Lab03.ps1"
 Invoke-WebRequest -Uri $url -OutFile $output
 Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
   ```
+> **Note:** This will take approximetaly 6-8 minutes
 
-> Note: This will take approximetaly 6-8 minutes
 6.  In the Virtual Machine Connection window to **2012-R2**, on
     the **License terms** page, select **Accept**.
 
@@ -111,7 +111,7 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 
 8.  After Restart, sign in by using the newly set password.
 
--   Note: Your Guest Vm will be ready after this step.
+-   Note: Your Guest Vm will be restarted once more automatically and will be ready after this step.
 
 ### Exercise 1: Create and configure an Azure Site Recovery vault
 
@@ -123,7 +123,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Site Recovery vault
 
-1.  Within the Remote Desktop session to **Prot-VM01**, navigate to
+1.  Within the Remote Desktop session to **Migrator**, navigate to
     the [[Azure portal]{.ul}](https://portal.azure.com/), and sign in.
 
 2.  On the **Create Recovery Services vault** blade, specify the
@@ -133,8 +133,8 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **Lab-09-Protected** |
-    | Vault name | **Protector** |
+    | Resource group | the name of a new resource group **Lab-03-Migrated** |
+    | Vault name | **BCDR** |
     | Location | **East Us**  |
 
 3.  On the **Review + create** tab of the **Create Recovery Services
@@ -148,7 +148,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Configure the Azure Site Recovery vault
 
-1.  Open the newly created *Recovery Services vault* **Protector**.
+1.  Open the newly created *Recovery Services vault* **BCDR**.
 
 2.  Select **Properties**.
 
@@ -184,7 +184,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Prepare Infrastructure
 
-1.  Within the Remote Desktop Select Site Recovery **Protector**, under
+1.  Within the Remote Desktop Select Site Recovery **BCDR**, under
     **Site Recovery**, click **Getting Started**
 
 2.  Under **Hyper-V Machines to Azure**, section, select **Prepare
@@ -232,11 +232,11 @@ The main tasks for this exercise are as follows:
             
     5.  **Review**  
           * Click **Prepare**	
-4. This will divert you back to **Protector \| Site Recovery** blade. Else, navigate yourself.
+4. This will divert you back to **BCDR \| Site Recovery** blade. Else, navigate yourself.
 
 #### Task 2: Enable replication
 
-1.  Under **Protector \| Site Recovery**, click **Getting Started**
+1.  Under **BCDR \| Site Recovery**, click **Getting Started**
 
 2.  Under **Hyper-V Machines to Azure**, section, select **Enable
     replication**.
@@ -255,14 +255,14 @@ The main tasks for this exercise are as follows:
               under the same **Tenancy**
 
       - **Post-Failover Resource Group**
-        - Choose the RG. **Lab-09-Protected** for this exercise. This menu does not allow you to create a new RG. You can
+        - Choose the RG. **Lab-03-Migrated** for this exercise. This menu does not allow you to create a new RG. You can
               create on a different menu and refresh the page to see here.    
       - **Post-failover deployment model.**
         - Choose **Resource Manager**. This is the default setting
       - **Storage**
-        - Choose the storage account ending with **prt01**
+        - Choose the storage account ending with **mig01**
       - **Network**
-        - Virtual Network: **Prt-VNet**
+        - Virtual Network: **Mig-VNet**
         - Subnet: **SN02**
       - Click **Next**
 
@@ -271,7 +271,7 @@ The main tasks for this exercise are as follows:
         - Choose 2012-R2 and click **Next**
 
    4. **Replication Settings**
-        - Choose OS Type as Windows. (this is for drivers for that OS) and click Next 5. Leave the default selected Replication Policy and click **Next**
+        - Choose OS Type as Windows. (this is for drivers for that OS) and click **Next**
          
    5. **Replication Policy**
         - Leave the default selected Replication Policy and click **Next** 
@@ -290,7 +290,7 @@ The main tasks for this exercise are as follows:
 #### Task 3: Review Azure VM replication settings
 
 
-1.  In the Azure portal, navigate to the **Protector** blade, under
+1.  In the Azure portal, navigate to the **BCDR** blade, under
     Overview \| Site Recovery and select **Replicated items**.
 
 2.  On **Replicated items** blade, ensure that 2012-R2 VM is listed
@@ -306,7 +306,7 @@ The main tasks for this exercise are as follows:
 4.  Click **Compute and Network** and click **Edit.** Update the
     properties as below.
 
-    -   Resource Group: **Lab-09-Protected**
+    -   Resource Group: **Lab-03-Migrated**
 
     -   Size: Standard **B2s** **(2 cores 4GB Memory, 3 NICs)**
 
@@ -318,40 +318,9 @@ The main tasks for this exercise are as follows:
 
 6.  Click **Overview**
 
-#### Task 4: Perform a Test failover of the Hyper-V virtual machine
+#### Task 4: Perform the Failover of the Hyper-V virtual machine
 
-1.  Select **Test failover**.
-
-2.  On the **Test failover** blade, specify the following settings
-
-    -   Choose a recovery point: **Leave as default** option for latest
-        processed.
-
-    -   Azure virtual network: **Prt-VNet**
-
-3.  Click **OK**
-
-4.  Click **Notifications** and click **Starting the test failover**
-    link. Observe the status of the **Test failover** job. Wait until
-    all the steps listed as **Successful**.
-
-5.  In the Azure portal, ensure that newly provisioned virtual
-    machine **2012-R2-test** is listed.
-
-6.  Navigate back to the **Protector.**
-
-7.  Click **Replicated Items** and click **2012-R2** and select
-    ***Cleanup** **test failover***.
-
-8.  Select the checkbox for *Testing is complete. Delete test failover
-    virtual machine(s)* and select **OK**.
-
-9.  Follow the notifications until the clean-up completed. (this will
-    delete the test vm)
-
-#### Task 5: Perform the Failover of the Hyper-V virtual machine
-
-1.  Navigate back to the **Protector.** Click **Replicated Items** and
+1.  Navigate back to the **BCDR.** Click **Replicated Items** and
     click **2012-R2** 
 
 2.  Select **Planned failover**.
@@ -371,7 +340,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 6: Remove Azure resources deployed in the lab
 
-1.  Navigate back to the **Protector.**
+1.  Navigate back to the **BCDR**
 
 2.  Click **Site Recovery infrastructure**
 
