@@ -335,8 +335,8 @@ The main tasks for this exercise are as follows:
 
     -   Size: Standard **B2s** **(2 cores 4GB Memory, 3 NICs)**
 
-    -   Virtual Network: Prt-VNet
-
+    -   Virtual Network: **Mig-VNet**
+    
     -   Azure Hybrid Benefit: **Yes,** and **Confirm**
 
 5.  Click **Save**
@@ -350,18 +350,38 @@ The main tasks for this exercise are as follows:
 
 2.  Select **Planned failover**.
 
-3.  On the **Planned failover** blade, note that the failover direction
-    settings are already set and not modifiable. Click **OK.**
+3.  On the **Planned failover** blade, Accept the warning and click **OK.**
 
 4.  Follow the notifications until the failover completed.
 
 5.  In the Azure portal, ensure that newly provisioned virtual
     machine **2012-R2** is listed.
 
-6.  As on the earlier task, it was showing as 2012-R2-test, now it is
-    the real Protected virtual machine.
+7.  After Failover Completed. We will **Complete the Migration.** 
 
-7.  Close the **Failover** blade.
+8.  To Complete the Migration, Click the **Complete Migration** button on the page Replicated Items, 2012-R2 and clik **OK**
+
+> Note: This will complete the traffic and replication between the source and newly created VM.
+
+#### Task 6: Check the Migration
+
+1.  Navigate to newly created virtual Machine, **2012-R2**
+2.  Click **Networking**
+3.  Choose Network Interface. You will see a complex name.
+4.  Click IP Configurations, click the ip address.
+5.  Set Public Ip address by clicking **Associate**
+6.  Choose Migrated-Pip and click **Save**
+7.  After Completed. Navigate to the Traffic manager. **Lab-03-TM**
+8.  Ensure that, this time the Endpoints are vice-versa. Migrated is online.
+| Name | Status | Monitor Status |
+    | --- | --- |--- |
+    | Onprem | Enabled | **Degraded**|
+    |Migrated | Enabled |**Online**|
+    
+9.  Visit the Traffic Manager URL, you will see the same page.
+
+> **Optional:** You can RDP to the 2012-R2 Vm with the password you provided. UserName will be **Administrator** and change the file content under c:\inetpub\wwwroot\iistart.html, to see that it is exactly publiching the page from the migrated server.
+
 
 #### Task 6: Remove Azure resources deployed in the lab
 
