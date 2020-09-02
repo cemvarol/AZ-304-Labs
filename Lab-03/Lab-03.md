@@ -244,11 +244,11 @@ The main tasks for this exercise are as follows:
          
 > Note: If your host, **Migrator** does not appear, refresh the page and reach to this level again.
        
-   3.  **Target Settings**
-        - This Automatically chooses the existing subscription and checks if you have available storage account at the location. Leave with the default setting. Click **Next**.
+    3.  **Target Settings**
+            - This Automatically chooses the existing subscription and checks if you have available storage account at the location. Leave with the default setting. Click **Next**.
         
-   4.  **Replication Policy**
-       - **Create new policy and associate**. (Leave default settings, ensure you assign a Name and set initial Replication as **Immediately**)
+    4.  **Replication Policy**
+         - **Create new policy and associate**. (Leave default settings, ensure you assign a Name and set initial Replication as **Immediately**)
          - Name: Provide a name e.g: **Rep-Pol**
            - Copy Frequency
            - Recovery point retention in hours
