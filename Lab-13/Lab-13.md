@@ -123,7 +123,7 @@ The main tasks for this exercise are as follows:
    ```sh
 $password = '1q2w3e4r5t6y*'
 $securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
-$aadApp30313 = New-AzADApplication -DisplayName 'aadApp30313' -HomePage 'http://aadApp30313' -IdentifierUris 'http://aadApp30313' -Password $securePassword
+$aadApp30313 = New-AzADApplication -DisplayName 'aadApp30413' -HomePage 'http://aadApp30413' -IdentifierUris 'http://aadApp30413' -Password $securePassword
    ```
 
 3.  From the Cloud Shell pane, run the following to create a new Azure
