@@ -1,29 +1,50 @@
 ---
 lab:
-    title: '13: Configuring a Message-Based Integration Architecture'
-    module: 'Module 12: Implement an Application Infrastructure'
+    title: '13: Implement Azure Logic Apps integration with Azure Event Grid'
+    module: 'Module 13: Design an Application Architecture'
 ---
 
-# Lab: Configuring a Message-Based Integration Architecture
-
+# Lab: Implement Azure Logic Apps integration with Azure Event Grid
 # Student lab manual
 
 ## Lab scenario
+Adatum Corporation has an extensive set of on-premises network monitoring framework that rely on the combination of agent-based and agentless solutions to provide visibility into any changes to its environment. The agentless solutions tend to be relatively inefficient since they rely on polling to determine state changes. 
 
-Adatum Corporation wants to implement custom monitoring of changes to a
-resource group
+As Adatum is preparing to migrate some of its workloads to Azure, its Enterprise Architecture team wants to address these inefficiencies and evaluate the use of event driven architecture available in the cloud. The notion of using events in a solution or application is not new to the team. In fact, they have been promoting the idea of event-driven programming among its developers. One of the core tenets of an event-driven architecture is to reverse the dependencies that existing services may have with each other. Azure provides this functionality by relying on Event Grid, which is a fully managed service that supports the routing of events by utilizing a publisher-subscriber model. At its core, Event Grid is an event routing service that manages the routing and delivery of events from numerous sources and subscribers.
+
+An event is created by a publisher such as a Blob Storage account, an Azure resource group, or even an Azure subscription. As events occur, they are published to an endpoint called a topic that the Event Grid service manages to digest all incoming messages. Event publishers are not limited to services on Azure. It is possible to use events that originate from custom applications or systems that can run from anywhere. This includes applications that are hosted on-premises, in a datacenter, or even on other clouds, if they can post an HTTP request to the Event Grid service.
+
+Event handlers include several Azure services, including serverless technologies such as Functions, Logic Apps, or Azure Automation. Handlers are registered with Event Grid by creating an event subscription. If the event handler endpoint is publicly accessible and encrypted by Transport Layer Security, then messages can be pushed to it from Event Grid.
+
+Unlike many other Azure services, there is no Event Grid namespace that needs to be provisioned or managed. Topics for native Azure resources are built in and completely transparent to users while custom topics are provisioned ad hoc and exist in a resource group. Event subscriptions are simply associated with a topic. This model simplifies management of topics as subscriptions and makes Event Grid highly multi-tenant, allowing for massive scale out.
+
+Azure Event Grid is agnostic to any language or platform. While it integrates natively with Azure services, it can just as easily be leveraged by anything that supports the HTTP protocol, which makes it a very clever and innovative service.
+
+To explore this functionality, the Adatum Architecture team wants to test integration of Azure Logic Apps with Event Grid to:
+
+-  detect when the state of a designated Azure VM is changed
+
+-  automatically generate an email notification in response to the event
+
 
 ## Objectives
-
+  
 After completing this lab, you will be able to:
 
--   Create an Azure logic app
+-  Integrate Azure Logic Apps with Event Grid
 
--   Configure integration of an Azure logic app and an Azure event grid
+-  Trigger execution of Logic Apps in response to an event representing a change to a resource within a resource group
+
 
 ## Lab Environment
+  
+Windows Server admin credentials
 
-Estimated Time: 30 minutes
+-  User Name: **QA**
+
+-  Password: **1q2w3e4r5t6y***
+
+Estimated Time: 45 minutes
 
 ## Lab Setup
 
