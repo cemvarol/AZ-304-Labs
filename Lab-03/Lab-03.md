@@ -145,8 +145,10 @@ The main tasks for this exercise are as follows:
 
 1.  Within the Remote Desktop session to **Migrator**, navigate to
     the [**Azure Portal**](https://portal.azure.com), and sign in.
+    
+2.  Click +New and search for **Backup and Site Recovery** and click **Create**
 
-2.  On the **Create Recovery Services vault** blade, specify the
+3.  On the **Create Recovery Services vault** blade, specify the
     following settings (leave others with their default values) and
     select **Review + create**:
 
@@ -157,7 +159,7 @@ The main tasks for this exercise are as follows:
     | Vault name | **BCDR** |
     | Location | **East Us**  |
 
-3.  On the **Review + create** tab of the **Create Recovery Services
+4.  On the **Review + create** tab of the **Create Recovery Services
     vault** blade, select **Create**:
 
 > **Note**: By default, the default configuration for Storage
