@@ -194,10 +194,9 @@ configuration.
 The main tasks for this exercise are as follows:
 
 1.  Add a trigger to the Azure logic app
-
-2.  Add an action to the Azure logic app
-
-3.  Test the logic app
+2.  Add a condition to the Azure logic app
+3.  Add an action to the Azure logic app
+4.  Test the logic app
 
 #### Task 1: Add a trigger to the Azure logic app
 
@@ -248,7 +247,7 @@ The main tasks for this exercise are as follows:
 
 8.   Type *event-subscription-az304Lab13* as Subscription Name and select **Save**
 
-#### Task 3: Add a condition to the Azure logic app
+#### Task 2: Add a condition to the Azure logic app
 
 1. Select **+ New step**. 
 
@@ -314,7 +313,7 @@ The main tasks for this exercise are as follows:
 
 9.  Click **Run**
 
-#### Task 3: Test the logic app
+#### Task 4: Test the logic app
 
 1.  In the Azure portal, create any Resource or an empty Resource group.
 
@@ -333,7 +332,13 @@ be applied to other Azure Resources.
 
 ### Exercise 3: Remove lab resources
 
-#### Task 1: Open Cloud Shell
+The main tasks for this exercise are as follows:
+
+1.  List the Resource Group
+
+2.  Delete resource groups
+
+#### Task 1: List the Resource Group
 
 1.  At the top of the portal, click the **Cloud Shell** icon to open the
     Cloud Shell pane.
