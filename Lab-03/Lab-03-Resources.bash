@@ -54,10 +54,9 @@ az network public-ip update --name $Pip01 -g $RG --dns-name $E
 az network public-ip create -g $RG -l $L --name $Pip02 --allocation-method static --dns-name $F
 
 
-az network traffic-manager profile create --name Lab-09-TM -g $RG --routing-method Priority --unique-dns-name $G
-az network traffic-manager endpoint create --name OnPrem --profile-name Lab-09-TM -g $RG --type externalEndpoints --endpoint-status Enabled --priority 1 --target $onprem
-az network traffic-manager endpoint create --name Migrated --profile-name Lab-09-TM -g $RG --type externalEndpoints --endpoint-status Enabled --priority 2 --target $migrated
-
+az network traffic-manager profile create --name Lab-03-TM -g $RG --routing-method Priority --unique-dns-name $G
+az network traffic-manager endpoint create --name OnPrem --profile-name Lab-03-TM -g $RG --type externalEndpoints --endpoint-status Enabled --priority 1 --target $onprem
+az network traffic-manager endpoint create --name Migrated --profile-name Lab-03-TM -g $RG --type externalEndpoints --endpoint-status Enabled --priority 2 --target $migrated
 
 
 
