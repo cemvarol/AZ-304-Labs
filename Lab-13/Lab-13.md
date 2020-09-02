@@ -220,6 +220,10 @@ The main tasks for this exercise are as follows:
     -   Event Type Item -
         2: **Microsoft.Resources.ResourceDeleteSuccess**
 
+7.  Select **Add new parameter** and select **Subscription Name** I
+
+8.   Type *event-subscription-az304Lab13* as Subscription Name and select **Save**
+
 #### Task 2: Add an action to the Azure logic app
 
 1.  On the Logic App Designer blade of the newly provisioned Azure logic
