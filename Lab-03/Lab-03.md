@@ -155,7 +155,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **Lab-03-Migrated** |
+    | Resource group | a **new** Resource Group **Lab-03-Migrated** |
     | Vault name | **BCDR** |
     | Location | **East Us**  |
 
