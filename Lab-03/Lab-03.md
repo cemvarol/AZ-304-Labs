@@ -64,10 +64,10 @@ The main tasks for this exercise are as follows:
 3.  In the toolbar of the Cloud Shell pane, run the following command to create the vm.
 
 ```sh
-curl -O https://raw.githubusercontent.com/cemvarol/AZ-303-Labs/master/Lab-09/Lab-09-Resources.bash\
-ls -la Lab-09-Resources.bash
-chmod +x Lab-09-Resources.bash
-./Lab-09-Resources.bash
+curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-03/Lab-03-Resources.bash\
+ls -la Lab-03-Resources.bash
+chmod +x Lab-03-Resources.bash
+./Lab-03-Resources.bash
 ```
 
 #### Task 2: Configure nested virtualization in the Azure VM
@@ -95,11 +95,11 @@ chmod +x Lab-09-Resources.bash
   ```powershell
 
   cd\
-mkdir Lab09
-$url = "https://raw.githubusercontent.com/cemvarol/AZ-303-Labs/master/Lab-09/Set-Lab.ps1"
-$output = "C:\Lab09\Lab09.ps1"
+mkdir Lab03
+$url = "https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-03/SetLab.ps1"
+$output = "C:\Lab03\Lab03.ps1"
 Invoke-WebRequest -Uri $url -OutFile $output
-Start-Process Powershell.exe -Argumentlist "-file C:\Lab09\Lab09.ps1"
+Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
   ```
 
 
