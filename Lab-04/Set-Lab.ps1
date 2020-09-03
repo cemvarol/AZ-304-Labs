@@ -13,6 +13,10 @@ $url3 = "https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-04/AD
 $output3 = "$env:USERPROFILE\desktop\ADusers.ps1"
 Invoke-WebRequest -Uri $url3 -OutFile $output3
 
+$url4 = "https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-04/dsa.lnk"
+$output4 = "$env:USERPROFILE\desktop\Active Directory Users and Computers.lnk"
+Invoke-WebRequest -Uri $url4 -OutFile $output4
+
 Start-Sleep -s 3
 
 Start-Process Powershell.exe -Argumentlist "-file $output1"
