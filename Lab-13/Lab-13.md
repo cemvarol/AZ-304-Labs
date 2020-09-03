@@ -28,7 +28,7 @@ To explore this functionality, the Adatum Architecture team wants to test integr
 
 
 ## Objectives
-  
+
 After completing this lab, you will be able to:
 
 -  Integrate Azure Logic Apps with Event Grid
@@ -37,7 +37,7 @@ After completing this lab, you will be able to:
 
 
 ## Lab Environment
-  
+
 Windows Server admin credentials
 
 -  User Name: **QA**
@@ -48,35 +48,7 @@ Estimated Time: 45 minutes
 
 ## Lab Setup
 
-Before starting the lab exercises, please go to
-[outlook.com](https://outlook.com) and send an email to your account
-used in this lab. Outlook will verify your account, to be able to send
-emails. This will be necessary in this lab.\
-Please do not skip this step.
-
-### Exercise 0: Prepare the lab environment
-
-The main tasks for this exercise are as follows:
-
-1.  Deploy an Azure VM for the Lab
-
-#### Task 1: Deploy an Azure VM for the Lab
-
-1.  Open [**Cloud Shell**](https://shell.azure.com) pane by selecting on
-    the toolbar icon directly to the right of the search textbox.
-
-2.  If prompted, select **Bash** .
-
-> **Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab,  and select **Create storage**.
-
-3.  In the toolbar of the Cloud Shell pane, run the following command to create the vm.
-
-```sh
-curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-13/Lab-13-Resources.bash
-ls -la Lab-13-Resources.bash
-chmod +x Lab-13-Resources.bash
-./Lab-13-Resources.bash
-```
+Before starting the lab exercises, please go to [outlook.com](https://outlook.com) and send an email to your account used in this lab. Outlook will verify your account, to be able to send emails. This will be necessary in this lab. Please do not skip this step.
 
 ### Exercise 1: Set up the lab environment that consists of an Azure storage account and an Azure logic app
 
@@ -144,7 +116,7 @@ New-AzADServicePrincipal -ApplicationId $aadApp30413.ApplicationId.Guid
 
  ```sh
 Get-AzSubscription
-```
+ ```
 
 6.  Note the value of the **TenantId** property of the Azure AD tenant
     associated with that subscription. You will also need them in the
@@ -194,113 +166,73 @@ configuration.
 The main tasks for this exercise are as follows:
 
 1.  Add a trigger to the Azure logic app
-2.  Add a condition to the Azure logic app
-3.  Add an action to the Azure logic app
+2.  Add an action to the Azure logic app
 4.  Test the logic app
 
 #### Task 1: Add a trigger to the Azure logic app
 
-1.  In the Azure portal, navigate to the newly created Resource group
-    AZ-304Lab-13.
-
-2.  Open the **Logic App Designer** blade of the newly provisioned Azure
-    logic app.
-
-3.  Click **Blank Logic App**. This will create a blank designer
-    workspace and display a list of connectors and triggers to add to
+1.  In the Azure portal, navigate to the newly created Resource group AZ-304Lab-13.
+    
+2.  Open the **Logic App Designer** blade of the newly provisioned Azure logic app.
+    
+3.  Click **Blank Logic App**. This will create a blank designer workspace and display a list of connectors and triggers to add to
     the workspace.
-
-4.  Search for **Event Grid** triggers and, in the list of results,
-    click the **When a resource event occurs** Azure Event Grid trigger
+    
+4.  Search for **Event Grid** triggers and, in the list of results, click the **When a resource event occurs** Azure Event Grid trigger
     to add it to the designer workspace.
-
-5.  In the **Azure Event Grid** tile, click the **Connect with Service
-    Principal** link, specify the following values, and
+    
+5.  In the **Azure Event Grid** tile, click the **Connect with Service Principal** link, specify the following values, and
     click **Create**:
-
     -   Connection Name: **eg30413**
 
-    -   Client ID: the **ApplicationId** property you identified in the
-        previous exercise
-
+    -   Client ID: the **ApplicationId** property you identified in the previous exercise
+    
     -   Client Secret: **1q2w3e4r5t6y\***
-
-    -   Tenant: the **TenantId** property you identified in the previous
-        exercise
-
-6.  In the **When a resource event occurs** tile, specify the following
-    values:
-
-    -   Subscription: Choose your subscription
-
-    -   Resource Type: **Microsoft.Resources.Subscriptions**
-
-    -   Resource Name: Choose your subscription
-
-    -   Event Type Item -
+    
+-   Tenant: the **TenantId** property you identified in the previous exercise
+    
+6.  In the **When a resource event occurs** tile, specify the following values:
+    
+-   Subscription: Choose your subscription
+    
+-   Resource Type: **Microsoft.Resources.Subscriptions**
+    
+-   Resource Name: Choose your subscription
+    
+-   Event Type Item -
         1: **Microsoft.Resources.ResourceWriteSuccess**
-
-    -   Event Type Item -
+    
+-   Event Type Item -
         2: **Microsoft.Resources.ResourceDeleteSuccess**
+    
 
-7.  Select **Add new parameter** and select **Subscription Name** I
+#### Task 2: Add an action to the Azure logic app
 
-8.   Type *event-subscription-az304Lab13* as Subscription Name and select **Save**
+1.  Click **New Step**.
 
-#### Task 2: Add a condition to the Azure logic app
-
-1. Select **+ New step**. 
-
-1. In the choose an action tile, search for **Condition**, select **Condition**  under *Actions*.
-
-1. When Condition box appears, click the ellipsis symbol in the upper right corner select **Rename**, and replace **Condition** with the text **If a virtual machine in the resource group has changed**. 
-
-1. Select the **Choose a value** text box, in the pop up window, select **Expression** tab and enter the expression below, and click **OK**
-
-   ```
-   triggerBody()?['data']['operationName']
-   ```
-
-1. Ensure that **is equal to** appears in the middle element of the condition and, in the **Choose a value** text box, type the value below, and click **Save**
-
-   ```
-   Microsoft.Compute/virtualMachines/write
-   ```
-
-#### Task 3: Add an action to the Azure logic app
-
-1.  On the Logic App Designer on Condition box, Under **If True**,  click **Add an Action**.
-
-2.  In the **Choose an action** pane, in the **Search connectors and
-    actions** text box, type **Outlook**.
-
+2.  In the **Choose an action** pane, in the **Search connectors and actions** text box, type **Outlook**.
+    
 3.  In the list of results, click **Outlook.com**.
 
-4.  In the list of actions for **Outlook.com**, click **Send an
-    email(V2)**
-
+4.  In the list of actions for **Outlook.com**, click **Send an email(V2)**
+    
 5.  In the **Outlook.com** pane, click **Sign in**.
 
-6.  When prompted, authenticate by using the Microsoft Account you are
-    using in this lab.
-
-7.  When prompted for the consent to grant Azure Logic App permissions
-    to access Outlook resources, click **Yes**.
-
-8.  In the **Send an email** pane, specify the following settings and
-    click **Save.**
-
-    -   To: *Microsoft Account you are using in this lab*
-
-    -   Subject: Click the field and, in the **Dynamic Content** column
-        to the right, choose **Event Type**.
-
-    -   Body: Click the field and, in the **Dynamic Content** column to
-        the right, search for and add
-
-            Event Time
+6.  When prompted, authenticate by using the Microsoft Account you are using in this lab.
+    
+7.  When prompted for the consent to grant Azure Logic App permissions to access Outlook resources, click **Yes**.
+    
+8.  In the **Send an email** pane, specify the following settings and click **Save.**
+    
+-   To: *Microsoft Account you are using in this lab*
+    
+-   Subject: Click the field and, in the **Dynamic Content** column to the right, choose **Event Type**.
+        
+    -   Body: Click the field and, in the **Dynamic Content** column to the right, search for and add the ones below.
+    
+        Event Time
             ------------
-            Event Type
+        Event Type
             ------------
             ID
             ------------
@@ -308,27 +240,19 @@ The main tasks for this exercise are as follows:
             ------------
             Data Object 
             ------------
-    -   You can put these values on single lines and put \-\-\-\-- as
-    separator between the values*
-
+    - You can put these values on single lines and put \-\-\-\-- as separator between the values*
+    
 9.  Click **Run**
 
-#### Task 4: Test the logic app
+#### Task 3: Test the logic app
 
-1.  In the Azure portal, create any Resource or an empty Resource group.
+1.  In the Azure portal, create or delete any Resource or an empty Resource group.
 
-2.  Navigate to the inbox of the email account you configured in this
-    exercise and verify that includes an email generated by the logic
-    app.
+2.  Navigate to the inbox of the email account you configured in this exercise and verify that includes an email generated by the logic app.
+    
+3.  Another test: Navigate to the **LogApp-13** blade, click **Refresh**, and note that the **Runs history** includes the entry  corresponding to configuration change of the Azure storage account.
 
-3.  Another test: Navigate to the **LogApp-13** blade,
-    click **Refresh**, and note that the **Runs history** includes the
-    entry corresponding to configuration change of the Azure storage
-    account.
-
-> **Result**: After you completed this exercise, you have configured an
-Azure logic app to monitor changes to a your subscription. This can also
-be applied to other Azure Resources.
+> **Result**: After you completed this exercise, you have configured an Azure logic app to monitor changes to a your subscription. This can also be applied to other Azure Resources.
 
 ### Exercise 3: Remove lab resources
 
@@ -340,26 +264,21 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: List the Resource Group
 
-1.  At the top of the portal, click the **Cloud Shell** icon to open the
-    Cloud Shell pane.
-
-2.  If previous session is PowerShell *[type]{.ul}* **"bash"** to start
-    the Bash shell session on PowerShell.
-
-3.  Run the following command to list all resource groups you created in
-    this lab:
+1.  At the top of the portal, click the **Cloud Shell** icon to open the Cloud Shell pane.
+    
+2.  If previous session is PowerShell *[type]{.ul}* **"bash"** to start the Bash shell session on PowerShell.
+    
+3.  Run the following command to list all resource groups you created in this lab:
 
 ```sh
 az group list --query "[?contains(name,'Lab-13')]".name --output tsv
 ```
 
-4.  Verify that the output contains only the resource groups you created
-    in this lab. These groups will be deleted in the next task.
+4.  Verify that the output contains only the resource groups you created in this lab. These groups will be deleted in the next task.
 
 #### Task 2: Delete resource groups
 
-1.  Run the following command to delete the resource groups you created
-    in this lab
+1.  Run the following command to delete the resource groups you created in this lab
 
 ```sh
 az group list --query "[? contains(name,'Lab-13')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
