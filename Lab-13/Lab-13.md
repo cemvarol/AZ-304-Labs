@@ -230,9 +230,9 @@ The main tasks for this exercise are as follows:
         
     -   Body: Click the field and, in the **Dynamic Content** column to the right, search for and add the ones below.
     
-        Event Time
+            Event Time
             ------------
-        Event Type
+            Event Type
             ------------
             ID
             ------------
