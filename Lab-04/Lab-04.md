@@ -215,7 +215,7 @@ The main tasks for this exercise are as follows:
     
 1. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
     
-1. On the **Ready to configure** page, ### Uncheck ### the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
+1. On the **Ready to configure** page, **UNCHECK** the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
 
     > **Note**: Installation should take about 2 minutes.
 
