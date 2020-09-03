@@ -104,11 +104,11 @@ The main tasks for this exercise are as follows:
   ```powershell
 
   cd\
-mkdir Lab09
-$url = "https://raw.githubusercontent.com/cemvarol/AZ-303-Labs/master/Lab-09/Set-Lab.ps1"
-$output = "C:\Lab09\Lab09.ps1"
+mkdir Lab04
+$url = "https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-04/Set-Lab.ps1"
+$output = "C:\Lab04\Set-Lab.ps1"
 Invoke-WebRequest -Uri $url -OutFile $output
-Start-Process Powershell.exe -Argumentlist "-file C:\Lab09\Lab09.ps1"
+Start-Process Powershell.exe -Argumentlist "-file C:\Lab04\Set-Lab.ps1"
   ```
 
 
