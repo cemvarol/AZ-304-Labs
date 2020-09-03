@@ -134,17 +134,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Activate** blade, in the **Azure AD Premium P2** section, select **Free trial** and then select **Activate**. 
 
-1. Refresh the browser window showing the **Licenses | All products** blade to verify that the activation was successful. 
-
-1. On the **Licenses - All products** blade, select the **Azure Active Directory Premium P2** entry. 
-
-1. On the **Azure Active Directory Premium P2 | Licensed users** blade, select **+ Assign**. 
-
-1. On the **Assign license** blade, select **Users**, and on the **Users** blade, select both your account and the **az30310-aaduser1** user account.
-
-1. Back on the **Assign license** blade, select **Assignment options**, review the options listed on the **License options** blade, and select **OK**.
-
-1. On the **Assign license** blade, select **Assign**. 
+1. On the **Activate** blade, in the  **ENTERPRISE MOBILITY + SECURITY E5** section, select **Free trial** and then select **Activate**. 
 
 
 #### Task 2: Create and configure Azure AD users
