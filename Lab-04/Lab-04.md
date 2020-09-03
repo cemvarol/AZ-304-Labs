@@ -45,12 +45,6 @@ Windows Server admin credentials
 
 Estimated Time: 45 minutes
 
-
-## Lab Files
-
--  \\\\AZ303\\AllFiles\\Labs\\10\\azuredeploy30310suba.json
-
-
 ## Instructions
 
 ### Exercise 0: Prepare the lab environment
@@ -60,6 +54,8 @@ The main tasks for this exercise are as follows:
 1. Create a Vm for a Domain Controller
 
 1. Promote the Vm as your domain controller
+
+1. Create Domain Accounts
 
 
 #### Task 1: Create a Vm for a Domain Controller
@@ -79,10 +75,9 @@ The main tasks for this exercise are as follows:
 
 
 #### Task 2: Promote the Vm as your domain controller
-#### Task 2: Configure nested virtualization in the Azure VM
 
 1.  Select **Virtual machines** and, on the **Virtual machines** blade,
-    select **Prot-VM01**.
+    select **US-DC01**.
 
 2.  Select **Networking**.
 
@@ -110,54 +105,15 @@ $output = "C:\Lab04\Set-Lab.ps1"
 Invoke-WebRequest -Uri $url -OutFile $output
 Start-Process Powershell.exe -Argumentlist "-file C:\Lab04\Set-Lab.ps1"
   ```
+> **Note**: After this script is run, the VM will be restarted automatically. You will need to re-connect to this vm on the next Task.
 
+#### Task 3: Create Domain Accounts
 
-6.  In the Virtual Machine Connection window to **2012-R2**, on
-    the **License terms** page, select **Accept**.
+1. Please connect to the same VM again. You can follow the steps 1-4 of Task 2.
 
-7.  Set the password of the built-in Administrator account
-    to **London2020\*** and select **Finish**.
-
-8.  After Restart, sign in by using the newly set password.
-
--   Note: Your Guest Vm will be ready after this step.
-
-1. In the Azure portal, in the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310suba.json** into the Cloud Shell home directory.
-
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that you specified in the previous task):
-
-   ```powershell
-   $location = '<Azure region>'
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30310subaDeployment `
-     -TemplateFile $HOME/azuredeploy30310suba.json `
-     -rgLocation $location `
-     -rgName 'az30310a-labRG'
-   ```
-
-1. In the Azure portal, close the **Cloud Shell** pane.
-
-1. From your lab computer, open another browser tab and navigate to the [https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain). 
-
-1. On the **Create a new Windows VM and create a new AD Forest, Domain and DC** page, select **Deploy to Azure**. This will automatically redirect the browser to the **Create an Azure VM with a new AD Forest** blade in the Azure portal.
-
-1. On the **Create an Azure VM with a new AD Forest** blade, select **Edit parameters**.
-
-1. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, select **\\\\AZ303\\AllFiles\Labs\\10\\azuredeploy30310rga.parameters.json**, select **Open**, and then select **Save**. 
-
-1. On the **Create an Azure VM with a new AD Forest** blade, specify the following settings (leave others with their existing values):
-
-    | Setting | Value |
-    | --- | --- |
-    | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30310a-labRG** |
-    | Dns Prefix | the DNS hostname you identified in the previous task|
-
-1. On the **Create an Azure VM with a new AD Forest** blade, select the checkbox **I agree to the terms and conditions above** and select **Purchase**.
-
-    > **Note**: Do not wait for the deployment to complete but instead proceed to the next exercise. The deployment might take about 15 minutes. You will use the virtual machine deployed in this task in the third exercise of this lab.
-
+1. On the desktop of your profile, right click the Create AD Users.ps1 file and choose **Run with Powershell**
+1. Script will ask for **How many users to create** Provide 50 as the number of users to create, and hit Enter. Accept if any Powershell Policy asked to confirm. 
+> **Note**: This will create 50 users (or the amount you provide). They will be under OUs, and set for their group memberships. Observe the created users on Active Directory users and Computers. this will also create a user name **OnPremAdmin**
 
 ### Exercise 1: Create and configure an Azure AD tenant
 
@@ -170,32 +126,32 @@ The main tasks for this exercise are as follows:
 1. Activate and assign Azure AD Premium P2 licensing
 
 
-#### Task 1: Create an Azure AD tenant
+#### Task 1: Activate and assign Azure AD Premium P2 licensing
 
-1. In the Azure portal, search for and select **Azure Active Directory** and, on the Azure Active Directory blade, select **+ Create a tenant**.
+1. Back in the browser window displaying the Azure portal, navigate to the **Overview** blade of the **Adatum Lab** Azure AD tenant and, in the **Manage** section, select **Licenses**.
 
-1. On the **Basics** tab of the **Create a directory** blade, select the **Azure Active Directory** option and select **Next: Configuration >**.
+1. On the **Licenses | Overview** blade, select **All products**, select **+ Try/Buy**.
 
-1. On the **Configuration** tab of the **Create a directory** blade, specify the following settings (leave others with their existing values):
+1. On the **Activate** blade, in the **Azure AD Premium P2** section, select **Free trial** and then select **Activate**. 
 
-    | Setting | Value |
-    | --- | --- |
-    | Organization name | **Adatum Lab** |
-    | Initial domain name | any valid DNS name consisting of lower case letters and digits and starting with a letter |
-    | Country/Region | **United States** |
+1. Refresh the browser window showing the **Licenses | All products** blade to verify that the activation was successful. 
 
-   > **Note**: The green check mark in the **Initial domain name** text box will indicate that the domain name you typed in is valid and unique.
+1. On the **Licenses - All products** blade, select the **Azure Active Directory Premium P2** entry. 
 
-1. Select **Next: Review + create** and then select **Create**.
+1. On the **Azure Active Directory Premium P2 | Licensed users** blade, select **+ Assign**. 
 
-1. Refresh the browser page displaying the Azure portal, search for and select **Azure Active Directory** and, on the Azure Active Directory blade, select **Switch tenant**.
+1. On the **Assign license** blade, select **Users**, and on the **Users** blade, select both your account and the **az30310-aaduser1** user account.
 
-1. In the **Directory + subscription** blade, select **Adatum Lab**. 
+1. Back on the **Assign license** blade, select **Assignment options**, review the options listed on the **License options** blade, and select **OK**.
+
+1. On the **Assign license** blade, select **Assign**. 
 
 
 #### Task 2: Create and configure Azure AD users
 
-1. On the **Adatum Lab | Overview** Azure Active Directory blade, in the **Manage** section, select **Users**, on the **Users | All users** blade, select your user account to display its **Profile** settings. 
+1. Sign in to Azure portal on the DC.
+
+1. Select the **Azure Active Directory**
 
 1. On the profile blade of your user account, select **Edit**, in the **Settings** section, set **Usage location** to **United States** and save the change.
 
@@ -223,25 +179,7 @@ The main tasks for this exercise are as follows:
 1. Sign out as the **az30310-aaduser1** user from the Azure portal and close the InPrivate browser window.
 
 
-#### Task 3: Activate and assign Azure AD Premium P2 licensing
 
-1. Back in the browser window displaying the Azure portal, navigate to the **Overview** blade of the **Adatum Lab** Azure AD tenant and, in the **Manage** section, select **Licenses**.
-
-1. On the **Licenses | Overview** blade, select **All products**, select **+ Try/Buy**.
-
-1. On the **Activate** blade, in the **Azure AD Premium P2** section, select **Free trial** and then select **Activate**. 
-
-1. Refresh the browser window showing the **Licenses | All products** blade to verify that the activation was successful. 
-
-1. On the **Licenses - All products** blade, select the **Azure Active Directory Premium P2** entry. 
-
-1. On the **Azure Active Directory Premium P2 | Licensed users** blade, select **+ Assign**. 
-
-1. On the **Assign license** blade, select **Users**, and on the **Users** blade, select both your account and the **az30310-aaduser1** user account.
-
-1. Back on the **Assign license** blade, select **Assignment options**, review the options listed on the **License options** blade, and select **OK**.
-
-1. On the **Assign license** blade, select **Assign**. 
 
 
 ### Exercise 2: Integrate an AD DS forest with an Azure AD tenant
