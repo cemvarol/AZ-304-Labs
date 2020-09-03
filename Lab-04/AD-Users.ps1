@@ -61,7 +61,7 @@ foreach ($i in 1..$Users) {
 
 
 New-ADUser -Name OnPremAdmin `
-               -AccountPassword (ConvertTo-SecureString -AsPlainText "London2019*" -Force) `
+               -AccountPassword (ConvertTo-SecureString -AsPlainText "London2020*" -Force) `
                -City London `
                -Company QA  `
                -DisplayName OnPremAdmin `
