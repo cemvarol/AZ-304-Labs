@@ -5,7 +5,7 @@ $url1 = "https://raw.githubusercontent.com/cemvarol/DC/master/ChromeInstall.ps1"
 $output1 = "$env:USERPROFILE\downloads\ChromeInstall.ps1"
 Invoke-WebRequest -Uri $url1 -OutFile $output1
 
-$url2 = "https://raw.githubusercontent.com/cemvarol/DC/master/OneTouchDCInstallation.ps1"
+$url2 = "https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/Lab-04/InstallDC.ps1"
 $output2 = "$env:USERPROFILE\desktop\InstallDC.ps1"
 Invoke-WebRequest -Uri $url2 -OutFile $output2
 
