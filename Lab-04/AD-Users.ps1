@@ -21,7 +21,7 @@ foreach ($i in 1..$Users) {
         $i = $i
     }
     New-ADUser -Name AdUser$i `
-               -AccountPassword (ConvertTo-SecureString -AsPlainText "London2019*" -Force) `
+               -AccountPassword (ConvertTo-SecureString -AsPlainText "London2020*" -Force) `
                -City London `
                -Company QA  `
                -DisplayName AdUser$i `
