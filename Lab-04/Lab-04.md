@@ -86,9 +86,10 @@ The main tasks for this exercise are as follows:
 
 4.  When prompted, sign in with the following credentials:
 
--   User Name: **QA**
-
--   Password: **1q2w3e4r5t6y\***
+    | Setting | Value |
+    | --- | --- |
+    | User Name | **QA** |
+    | Password | **1q2w3e4r5t6y*** |
 
 > **Important Note:** All the actions you will follow including this step
     will be done on this Remote Computer's Console.
@@ -139,22 +140,16 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create and configure Azure AD users
 
-1. Sign in to Azure portal on the DC.
+1. On the **Azure Active Directory**
 
-1. Select the **Azure Active Directory**
+1. Navigate to the **Users - All users** blade, and then select **+ New user**.
 
-1. On the profile blade of your user account, select **Edit**, in the **Settings** section, set **Usage location** to **United States** and save the change.
-
-    >**Note**: This is necessary in order to assign an Azure AD Premium P2 license to your user account later in this lab.
-
-1. Navigate back to the **Users - All users** blade, and then select **+ New user**.
-
-1. On the **New user** blade, specify the following settings (leave others with their defaults):
+1. On the **New user** blade, create user with the following settings (leave others with their defaults):
 
     | Setting | Value |
     | --- | --- |
-    | User name | **az30310-aaduser1** |
-    | Name | **az30310-aaduser1** |
+    | User name | **Superman** |
+    | Name | **Clark Kent** |
     | Auto-generate password | enabled |
     | Show password | enabled |
     | Roles | **Global administrator** |
@@ -162,17 +157,10 @@ The main tasks for this exercise are as follows:
 
     >**Note**: Record the full user name (including the domain name) and the auto-generated password. You will need it later in this task.
 
-1. On the **New user** blade, select **Create**
-
-1. On the lab computer, open an **InPrivate** browser window and sign in to the [Azure portal](https://portal.azure.com) using the newly created **az30310-aaduser1** user account. When prompted to update the password, change the password to **Pa55w.rd1234**. 
-
-1. Sign out as the **az30310-aaduser1** user from the Azure portal and close the InPrivate browser window.
+1. Open an **InCognito** browser window and sign in to the [Azure portal](https://portal.azure.com) using the newly created user account. When prompted to update the password, change the password to **1q2w3e4r5t6y*** 
 
 
-
-
-
-### Exercise 2: Integrate an AD DS forest with an Azure AD tenant
+### Exercise 2: Integrate AD DS forest with an Azure AD tenant
 
 The main tasks for this exercise are as follows:
 
@@ -187,95 +175,67 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Assign a custom domain name to the Azur AD tenant
 
-1. In the Azure portal, navigate to the **Adatum Lab | Overview** blade.
+1.  On the **Azure Active Directory**
 
-1. On the **Adatum Lab | Overview** blade, select **Custom domain names**.
+1. Select **Custom domain names**.
 
-1. On the **Adatum Lab | Custom domain names** blade, identify the primary, default DNS domain name associated with the Azure AD tenant. 
+1. Identify the primary, default DNS domain name associated with the Azure AD tenant. 
 
     >**Note**: Record the value of the primary DNS name of the Azure AD tenant. You will need it in the next task.
 
-1. On the **Adatum Lab | Custom domain names** blade, select **+ Add custom domain**.
+1. Select **+ Add custom domain**.
 
-1. On the **Custom domain name** blade, in the **Custom domain name** text box, type **adatum.com**, and select **Add domain**. 
+1. Type **adatum.com**, and select **Add domain**. 
 
 1. On the **adatum.com** blade, review the information necessary to perform verification of the Azure AD domain name and close the blade.
 
     > **Note**: You will not be able to complete the validation process because you do not own the **adatum.com** DNS domain name. This will *not* prevent you from synchronizing the **adatum.com** Active Directory domain with the Azure AD tenant. You will use for this purpose the default primary DNS name of the Azure AD tenant (the name ending with the **onmicrosoft.com** suffix), which you identified earlier in this task. However, keep in mind that, as a result, the DNS domain name of the Active Directory domain and the DNS name of the Azure AD tenant will differ. This means that Adatum users will need to use different names when signing in to the Active Directory domain and when signing in to Azure AD tenant.
 
 
-#### Task 2: Configure AD DS in the Azure VM
+#### Task 2:  Install Azure AD Connect
 
-> **Note**: Make sure that the deployment of the Azure VM you initiated at the beginning of the lab has completed before you start this exercise.
+1.Within the Remote Desktop session to **US-DC01** sign in to the [Azure portal](https://portal.azure.com), select **Azure Active Directory** and click **Azure AD Connect**.
 
-1. In the Azure portal, search for and select **Virtual machines** and, on the **Virtual machines** blade, select **az30310a-vm1**.
-
-1. On the **az30310a-vm1** blade, select **Connect**, in the drop-down menu, select **RDP**, on the **RDP** tab of the **az30310a-vm1 | Connect** blade, in the **IP address** drop-down list, select the **Load balancer public IP address** entry, and then select **Download RDP File**.
-
-1. When prompted, sign in with the following credentials:
-
-    | Setting | Value |
-    | --- | --- |
-    | User Name | **Student** |
-    | Password | **Pa55w.rd1234** |
-
-1. Within the Remote Desktop session to **az30310a-vm1**, in the Server Manager window, select **Local Server**, select the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options.
-
-1. Within the Remote Desktop session to **az30310a-vm1**, in the Server Manager window, select **Tools** and, in the drop-down menu, select **Active Directory Administrative Center**
-
-1. In **Active Directory Administrative Center**, select **adatum (local)**, in the **Tasks** pane, select **New**, and, in the cascading menu, select **Organizational Unit**.
-
-1. In the **Create Organizational Unit** window, in the **Name** text box, type **ToSync** and select **OK**.
-
-1. Double-click the newly crated **ToSync** organizational unit such that it its content appears in the details pane of the Active Directory Administrative Center console. 
-
-1. In the **Tasks** pane, within the **ToSync** section, select **New**, and, in the cascading menu, select **User**.
-
-1. In the **Create User** window, create a new user account with the following settings (leave others with their existing values) and select **OK**:
-
-    | Setting | Value |
-    | --- | --- |
-    | Full Name | **aduser1** |
-    | User UPN logon | **aduser1** |
-    | User SamAccountName logon | **aduser1** |
-    | Password | **Pa55w.rd1234** |
-    | Other password options | **Password never expires** |
-
-
-#### Task 3: Install Azure AD Connect
-
-1. Within the Remote Desktop session to **az30310a-vm1**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by using the **az30310-aaduser1** user account you created the previous exercise. When prompted, specify the full user name you recorded and the **Pa55w.rd1234** password.
-
-1. In the Azure portal, search for and select **Azure Active Directory** and, on the **Adatum Lab | Overview** blade, select **Azure AD Connect**.
-
-1. On the **Adatum Lab | Azure AD Connect** blade, select the **Download Azure AD Connect** link. You will be redirected to the **Microsoft Azure Active Directory Connect** download page.
-
-1. On the **Microsoft Azure Active Directory Connect** download page, select **Download**.
+1. Select the **Download Azure AD Connect** link. You will be redirected to the **Microsoft Azure Active Directory Connect** download page, select **Download**.
 
 1. When prompted, select **Run** to start the **Microsoft Azure Active Directory Connect** wizard.
 
-1. On the **Welcome to Azure AD Connect** page of the **Microsoft Azure Active Directory Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
+1. On the first page of the **Microsoft Azure Active Directory Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
 
-1. On the **Express Settings** page of the **Microsoft Azure Active Directory Connect** wizard, select the **Customize** option.
+1. On the **Express Settings** Choose **Use Express Settings**.
 
-1. On the **Install required components** page, leave all optional configuration options deselected and select **Install**.
+1. On the **Connect to AZure AD** page, provide the login information of newly created AzAD account and click **Next**. (superman)
+
+1. On the **Connect to ADDS** page, provide the login information of *Enterprise Administrator* account **AURIAN\OnPremAdmin** with password *London2020**
+
+    | Setting | Value |
+    | --- | --- |
+    | User Name | **AURIAN\OnPremAdmin** |
+    | Password | *London2020** |
+    
+1. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
+    
+1. On the **Ready to configure** page, ensure that the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
+
+    > **Note**: Installation should take about 2 minutes.
+
+------------------------------------------------------------------------------------------
 
 1. On the **User sign-in** page, ensure that only the **Password Hash Synchronization** is enabled and select **Next**.
 
 1. On the **Connect to Azure AD** page, authenticate by using the credentials of the **az30310-aaduser1** user account you created in the previous exercise and select **Next**. 
 
+
+
+
 1. On the **Connect your directories** page, select the **Add Directory** button to the right of the **adatum.com** forest entry.
 
 1. In the **AD forest account** window, ensure that the option to **Create new AD account** is selected, specify the following credentials, and select **OK**:
 
-    | Setting | Value |
-    | --- | --- |
-    | User Name | **ADATUM\Student** |
-    | Password | **Pa55w.rd1234** |
-
+    
 1. Back on the **Connect your directories** page, ensure that the **adatum.com** entry appears as a configured directory and select **Next**
 
-1. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
+
 
     > **Note**: As explained earlier, this is expected, since you could not verify the custom Azure AD DNS domain **adatum.com**.
 
