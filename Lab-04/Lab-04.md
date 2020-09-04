@@ -342,7 +342,7 @@ The main tasks for this exercise are as follows:
     - On the **Include** tab, check **Users and groups** checkbox
     - Select **Thirties** Group, and click **Select**. (you can use the search bar)
 
-1.In the **Cloud apps or actions** section, select **Select Apps*
+1. In the **Cloud apps or actions** section, select **Select Apps*
    - On the **Include** tab, select **Select apps** 
    - Select **Microsoft Azure Management** checkbox, and click **Select**.
 
