@@ -406,7 +406,7 @@ The main tasks for this exercise are as follows:
    ```
 1. On the **Users - All users** blade, select each user account you synchronized click **Delete** in the toolbar.
 
-> **Note:** The synchronized accounts will be labelled as **Yes** under **Directory Synched** column
+    > **Note:** The synchronized accounts will be labelled as **Yes** under **Directory Synched** column
 
 1. Within the Remote Desktop session to **US-DC01**, navigate to Azure portal
 
