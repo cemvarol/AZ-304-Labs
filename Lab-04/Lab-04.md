@@ -369,7 +369,7 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Completing the multi-factor authentication configuration is optional. If you proceed, you will need to designate your mobile device as an authentication phone or to use it to run a mobile app.
 
-#DENYO
+#DENYO<z<
 
 
 #### Task 4: Remove Azure resources deployed in the lab
