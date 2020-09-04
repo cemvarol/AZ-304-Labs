@@ -76,13 +76,11 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Promote the Vm as your domain controller
 
-1.  Select **Virtual machines** and, on the **Virtual machines** blade,
-    select **US-DC01**.
+1.  Select **Virtual machines** and, on the **Virtual machines** blade, select **US-DC01**.
 
 2.  Select **Networking**.
 
-3.  Select **Connect**, in the drop-down menu, select **RDP**, and then
-    click **Download RDP File**.
+3.  Select **Connect**, in the drop-down menu, select **RDP**, and then click **Download RDP File**.
 
 4.  When prompted, sign in with the following credentials:
 
@@ -91,11 +89,9 @@ The main tasks for this exercise are as follows:
     | User Name | **QA** |
     | Password | **1q2w3e4r5t6y*** |
 
-> **Important Note:** All the actions you will follow including this step
-    will be done on this Remote Computer's Console.
+> **Important Note:** All the actions you will follow including this step will be done on this Remote Computer's Console.
 
-5.  Within the Remote Desktop session run the following command in
-    **PowerShell** to create the guest vm to protect.
+5.  Within the Remote Desktop session run the following command in **PowerShell** to promote to a Domain Controller.
     
   ```powershell
 
@@ -113,9 +109,13 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab04\Set-Lab.ps1"
 1. Please connect to the same VM again. You can follow the steps 1-4 of Task 2.
 
 1. On the desktop of your profile, right click the Create AD Users.ps1 file and choose **Run with Powershell**
+
 1. Accept by typing A and hit Enter if any Powershell Policy is asked.
+
 1. Script will ask for **How many users to create** Provide 50 as the number of users to create, and hit Enter. 
+
 1. Observe the created users and groups in Local Domain.
+
 > **Note**: This will create 50 users. They will be under OUs, and set for their group memberships. Observe the created users on Active Directory users and Computers. this will also create a user name **OnPremAdmin**
 
 ### Exercise 1: Configure an Azure AD tenant
@@ -129,7 +129,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Activate and assign Azure AD Premium P2 licensing
 
-1. Back in the browser window displaying the Azure portal, navigate to the **Overview** blade of the **Adatum Lab** Azure AD tenant and, in the **Manage** section, select **Licenses**.
+1. Back on the Azure portal, navigate to **Azure Active Directory**, click **Licenses**.
 
 1. On the **Licenses | Overview** blade, select **All products**, select **+ Try/Buy**.
 
@@ -153,8 +153,7 @@ The main tasks for this exercise are as follows:
     | Auto-generate password | enabled |
     | Show password | enabled |
     | Roles | **Global administrator** |
-    | Usage location | **United States** |
-
+    
     >**Note**: Record the full user name (including the domain name) and the auto-generated password. You will need it later in this task.
 
 1. Open an **InCognito** browser window and sign in to the [Azure portal](https://portal.azure.com) using the newly created user account. When prompted to update the password, change the password to **1q2w3e4r5t6y*** 
@@ -166,12 +165,13 @@ The main tasks for this exercise are as follows:
 
 1. Assign a custom domain name to the Azur AD tenant
 
-1. Configure AD DS in the Azure VM
-
 1. Install Azure AD Connect
 
-1. Configure properties of synchronized user accounts
+1. Configure Azure AD Connect
 
+1. Check the synchronized user accounts
+
+1. Optional Task
 
 #### Task 1: Assign a custom domain name to the Azur AD tenant
 
@@ -195,7 +195,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2:  Install Azure AD Connect
 
-1.Within the Remote Desktop session to **US-DC01**, Navigate to [Azure portal](https://portal.azure.com), select **Azure Active Directory** and click **Azure AD Connect**.
+1. Within the Remote Desktop session to **US-DC01**, Navigate to [Azure portal](https://portal.azure.com), select **Azure Active Directory** and click **Azure AD Connect**.
 
 1. Select the **Download Azure AD Connect** link. You will be redirected to the **Microsoft Azure Active Directory Connect** download page, select **Download**.
 
@@ -205,7 +205,7 @@ The main tasks for this exercise are as follows:
 
 1. On the *Express Settings* step Choose **Use Express Settings**.
 
-1. On the **Connect to AZure AD** step, provide the login information of newly created AzAD account and click **Next**. (superman) *This is an account has the Global Administrator Role*
+1. On the **Connect to AZure AD** step, provide the login information of newly created AzAD account and click **Next**. (Superman) *This is an account has the Global Administrator Role*
 
 1. On the **Connect to ADDS** page, provide the login information of *Enterprise Administrator* account **AURIAN\OnPremAdmin** with password *London2020** *This account is created by the script*
 
@@ -214,7 +214,7 @@ The main tasks for this exercise are as follows:
     | User Name | **AURIAN\OnPremAdmin** |
     | Password | *London2020** |
     
-1. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and select **Next**.
+1. On the **Azure AD sign-in configuration** page, note the warning stating **Users will not be able to sign-in to Azure AD with on-premises credentials if the UPN suffix does not match a verified domain name**, enable the checkbox **Continue without matching all UPN suffixes to verified domain**, and click **Next**.
     
 1. On the **Ready to configure** page, **UNCHECK** the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
 
@@ -222,7 +222,7 @@ The main tasks for this exercise are as follows:
     
 1. **Configuration Complete** step, click **Exit** to complete the installation.
 
-1. Navigate to Azure Active Directory, click Users, ensure that the new account with the name **On-Premises Directory Synchronization Service Account** is created.
+1. Navigate to Azure Active Directory, click **Users**, ensure that the new account with the name **On-Premises Directory Synchronization Service Account** is created.
 
 #### Task 3:  Configure Azure AD Connect
 
@@ -232,10 +232,6 @@ The main tasks for this exercise are as follows:
 
 1. On the **Additional Taks** step, choose **Customize Synchronization Options**, and click **Next**
 
-**User sign-in** page, ensure that only the **Password Hash Synchronization** is enabled and select **Next**.
-
-1. On the **Connect to Azure AD** page, authenticate by using the credentials of the **az30310-aaduser1** user account you created in the previous exercise and select **Next**. 
-
 1. On the **Connect to AZure AD** step, provide the password of Azure AD account and click **Next**. (superman) 
 
 1. On the **Connect your directories** step, click **Next**.
@@ -243,15 +239,15 @@ The main tasks for this exercise are as follows:
 1. On the **Domain and OU Filtering** step, choose **Sync Selected Domains and OUs**. Expand the aurian.club domain and uncheck the box next to domain name to clear all the boxes. 
 
 1. Under *Sync Selected Domains and OUs* 
-    - Choose either Tens or Twenties. (This proves that you can choose nested level of OUs to sync to Azure AD.
-    - Choose any other OUs, e.g. Thirties, Forties etc.
-    - Choose Groups
+    - Choose either **Tens or Twenties** (Proves that you can choose nested level of OUs to sync individually)
+    - Choose other OUs, e.g. **Thirties, Forties** etc.
+    - Choose **Groups**
 
 1. Click **Next**
 
 1. On the **Optional Features** step, check **Password Writeback** and click **Next**
 
-1. On the **Ready to Configure** step, CHECK the box for **Start the synchronization process when configuration completes** and click **Configure**
+1. On the **Ready to Configure** step, **CHECK** the box for **Start the synchronization process when configuration completes** and click **Configure**
 
 1. On the **Configuration Complete** step, click Exit.
 
@@ -261,9 +257,9 @@ The main tasks for this exercise are as follows:
 
 1. Under *Azure Active Directory* click **Groups** blade, choose **All AdUsers** click **Member**. Observe the sycnhronized users. 
 
-1. Within the Remote Desktop session to **US-DC01** Double Click **Active Directory users and Computers** shortcut, navigate to Groups, and double click the **All Users** group. Click *Members*.
+1. Within the Remote Desktop session to **US-DC01**, double click **Active Directory users and Computers** shortcut, navigate to Groups, and double click the **All Users** group. Click *Members*.
 
-1. Compare the difference between the members of Azure AD group and Local AD group.
+1. Compare the difference between the members of Azure AD group and Local AD group called **All Users**
 
  > **Note**: Groups are also objects to synchronize. Only the synchronized members are listed on Azure AD Group, however you have 50 members on-premises group has. 
  
@@ -272,9 +268,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Group Type | **Security** |
     | Group Name | **All Users** |
-    | Group Decription | Provide anything for description (this is optional value) |
-    | Azure AD roles can be assigned to the group (Preview)
- | Leave Default |
+    | Group Decription | Optional Value can be left empty |
     | Membership Type | **Dynamic User** |
  
 1. Click  **Add Dynamic Query**
@@ -340,9 +334,9 @@ The main tasks for this exercise are as follows:
 
 1. In the **Assignments** section, select **Select Users and groups**, 
     - On the **Include** tab, check **Users and groups** checkbox
-    - Select **Thirties** Group, and click **Select**. (you can use the search bar)
+    - Select **All Users** Group, and click **Select**. (Use the search bar if list is too crowded)
 
-1. In the **Cloud apps or actions** section, select **Select Apps*
+1. In the **Cloud apps or actions** section, select **Select Apps**
    - On the **Include** tab, select **Select apps** 
    - Select **Microsoft Azure Management** checkbox, and click **Select**.
 
@@ -350,26 +344,26 @@ The main tasks for this exercise are as follows:
    - On the **Grant** blade, ensure that the **Grant** option is selected 
    - Select **Require Multi-Factor Authentication** checkbox and select **Select**.
 
-1. Back on the **New** blade, set the **Enable policy** switch to **On** and click **Create**.
+1. Back on the **New** blade, set the *Enable policy* switch to **On** and click **Create**.
 
 
 #### Task 3: Verify Azure AD conditional access
 
-1. Within the Remote Desktop session to **US-DC01**, start a new **Incognito** window and navigate to [Azure Portal](https://portal.azure.com).
+1. Within the Remote Desktop session to **US-DC01**, start a new **Incognito** window and navigate to the [Access Panel Applications Portal](https://account.activedirectory.windowsazure.com)
 
 1. When prompted, sign in by using the synchronized Azure AD account of the *choose any account you prefer*, using the full user name you recorded in the previous exercise.
+
     | Setting | Value |
     | --- | --- |
     | User Name | **user22@AZURE-AD-DOMAIN-NAME** |
     | Password | **London2020*** |
 
-1. Navigate to the [Access Panel Applications Portal](https://account.activedirectory.windowsazure.com).
-
 1. Verify that you can successfully sign in to the Access Panel Applications portal. 
 
-1. In the same browser window, open a new tab and navigate to the [Azure portal](https://portal.azure.com).
+1. In the same browser window, open a new tab and navigate to the [Azure portal](https://portal.azure.com)
 
-1. Note that, this time, you are presented with the message **More information required**, click **Next**. 
+1. Note that, this time, you are presented with the message **More information required**, click **Next**
+> **Note** You won't be asked to provide your credentials, because you already have an authenticated session on the other tab within the same browser window. However the conditional access policy will check for Azure Portal Access.
 
 1. You will be redirected to the **Additional security verification** page,
 
