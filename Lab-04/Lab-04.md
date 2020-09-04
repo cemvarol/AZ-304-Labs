@@ -253,78 +253,60 @@ The main tasks for this exercise are as follows:
 
 1. On the **Ready to Configure** step, CHECK the box for **Start the synchronization process when configuration completes** and click **Configure**
 
-# DENYO
+1. On the **Configuration Complete** step, click Exit.
 
+#### Task 4: Check the synchronized user accounts
 
+1. Navigate to the **Users**, ensure that users are synchronized.
 
-is selected, specify the following credentials, and select **OK**:
+1. Under *Azure Active Directory* click **Groups** blade, choose **All AdUsers** click **Member**. Observe the sycnhronized users. 
 
-    
-1. Back on the **Connect your directories** page, ensure that the **adatum.com** entry appears as a configured directory and select **Next**
+1. Within the Remote Desktop session to **US-DC01** Double Click **Active Directory users and Computers** shortcut, navigate to Groups, and double click the **All Users** group. Click *Members*.
 
+1. Compare the difference between the members of Azure AD group and Local AD group.
 
-
+ > **Note**: Groups are also objects to synchronize. Only the synchronized members are listed on Azure AD Group, however you have 50 members on-premises group has. 
  
+ 1. Navigate to the **Grops**, click **+ New Group** to add a new group. 
+    | Setting | Value |
+    | --- | --- |
+    | Group Type | **Security** |
+    | Group Name | **All Users** |
+    | Group Decription | Provide anything for description (this is optional value) |
+    | Azure AD roles can be assigned to the group (Preview)
+ | Leave Default |
+    | Membership Type | **Dynamic User** |
+ 
+1. Click  **Add Dynamic Query**
 
-1. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
+1. Under **Property** choose the **department** option from the drop-down menu.
 
-1. On the **Uniquely identifying your users** page, accept the default settings, and select **Next**.
+1. Under **Operator** choose the **Contains** option from the drop-down menu.
 
-1. On the **Filter users and devices** page, accept the default settings, and select **Next**.
+1. Under **Value** type **Thi** only and click **Save**.
 
-1. On the **Optional features** page, accept the default settings, and select **Next**.
+>**Note:** If save seems passive, click the **Rule Syntax** field and Save will be available. 
 
-1. On the **Ready to configure** page, ensure that the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
+1. You will be diverted back to New Group Create page,click **Create**.
 
-    > **Note**: Installation should take about 2 minutes.
+>**Note:** Dynamic Group will be populated depending on the attribute value of Local AD accounts.
 
-1. Review the information on the **Configuration complete** page and select **Exit** to close the **Microsoft Azure Active Directory Connect** window.
+1. Within the Remote Desktop session to **US-DC01** Open **Active Directory users and Computers** console
 
+1. Go to the OU for **3-Thirties** and choose random one or more accounts, and change the value of Department with something else but Thirties.
+    -Under **Organization** Tab, Change the value to for **Department** Attribute.
+    
+> **Note** That change will reflect to Azure Active Directory on the next synchronization cycle. This happens automatically two times in every hour. You can trigger manually if you prefer. 
 
-#### Task 4: Configure properties of synchronized user accounts
+#### Optional Task
 
-1. Within the Remote Desktop session to **az30310a-vm1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Users - All users** blade of the Adatum Lab Azure AD tenant.
-
-1. On the **Users | All users** blade, note that the list of user objects includes the **aduser1** account, with the **Windows Server AD** appearing in the **Source** column.
-
-    > **Note**: You might have to wait a few minutes and select **Refresh** for the **aduser1** user account to appear.
-
-1. On the **Users | All users** blade, select the **aduser1** entry.
-
-1. On the **aduser1 | Profile** blade, note the full name of the user account.
-
-    > **Note**: Record the full user name. You will need it in the next exercise.
-
-1. On the **aduser1 | Profile** blade, in the **Job info** section, note that the **Department** attribute is not set.
-
-1. Within the Remote Desktop session to **az30310a-vm1**, switch to **Active Directory Administrative Center**, select the **aduser1** entry in the list of objects in the **ToSync** OU, and, in the **Tasks** pane, in the **ToSync** section, select **Properties**.
-
-1. In the **aduser1** window, in the **Organization** section, in the **Department** text box, type **Sales**, and select **OK**.
-
-1. Within the Remote Desktop session to **az30310a-vm1**, start **Windows PowerShell**.
-
-1. From the **Administrator: Windows PowerShell** console, run the following to start Azure AD Connect delta synchronization:
+1. Within the Remote Desktop session to **US-DC01**, start *Windows PowerShell* and, run the following to start Azure AD Connect delta synchronization:
 
    ```powershell
    Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
 
    Start-ADSyncSyncCycle -PolicyType Delta
    ```
-
-1. Switch to the Internet Explorer window displaying the **aduser1 | Profile** blade, refresh the page and note that the **Department** property is set to **Sales**.
-
-    > **Note**: You might need to wait for another minute and refresh the page again if the **Department** attribute remains not set.
-
-1. On the **aduser1 | Profile** blade, select **Edit**.
-
-1. On the **aduser1 | Profile** blade, in the **Settings** section, in the **Usage location** drop-down list, select **United States** and then select **Save**.
-
-1. On the **aduser1 | Profile** blade, select **Licenses**.
-
-1. On the **aduser1 | Licenses** blade, select **+ Assignments**.
-
-1. On the **Update license assignments** blade, select the **Azure Active Directory Premium P2** checkbox and select **Save**.
-
 
 ### Exercise 3: Implement Azure AD conditional access
 
@@ -341,49 +323,59 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Disable Azure AD security defaults.
 
-1. Within the Remote Desktop session to **az30310a-vm1**, in the Internet Explorer window displaying the Azure portal, navigate to the **Adatum Lab | Overview** blade of the Adatum Lab Azure AD tenant.
+1. Navigate to **Azure Active Directory**, select **Properties**.
 
-1. On the **Adatum Lab | Overview** blade, in the **Manage** section, select **Properties**.
+1. Select the **Manage Security defaults** link at the bottom of the page.
 
-1. On the **Adatum Lab | Properties** blade, select the **Manage Security defaults** link at the bottom of the page.
-
-1. On the **Enable Security defaults** blade, set **Enable Security defaults** switch to **No**, select the checkbox **My organization is using Conditional Access**, and select **Save**. 
+1. Ensure that **Enable Security defaults** set to **No**
 
 
 #### Task 2: Create an Azure AD conditional access policy
 
-1. On the **Adatum Lab | Properties** blade, in the **Manage** section, select the **Security**.
-
-1. On the **Security | Getting started** blade, select **Conditional Access**.
+1. Navigate to **Azure Active Directory**, select **Security**, click **Conditional Access**
 
 1. On the **Conditional Access | Policies** blade, select **+ New policy**.
 
-1. On the **New** blade, in the **Name** text box, type **Azure portal MFA enforcement**. 
+1. On the **New** blade, in the **Name** text box, type **Azure Portal MFA Enforcement**. 
 
-1. On the **New** blade, in the **Assignments** section, select **Users and groups**, on the **Include** tab, select **Select users and groups**, select the **Users and groups** checkbox, on the **Select** blade, select **aduser1**, and confirm your choice by clicking **Select**.
+1. In the **Assignments** section, select **Select Users and groups**, 
+    - On the **Include** tab, check **Users and groups** checkbox
+    - Select **Thirties** Group, and click **Select**. (you can use the search bar)
 
-1. Back on the **New** blade, in the **Assignments** section, select **Cloud apps or actions**, on the **Include** tab, select **Select apps**, click **Select**, on the **Select** blade, select **Microsoft Azure Management** checkbox, and confirm your choice by clicking **Select**.
+1.In the **Cloud apps or actions** section, select **Select Apps*
+   - On the **Include** tab, select **Select apps** 
+   - Select **Microsoft Azure Management** checkbox, and click **Select**.
 
-1. Back on the **New** blade, in the **Access controls** section, select **Grant**, on the **Grant** blade, ensure that the **Grant** option is selected, select **Require multi-factor authentication**, and confirm your choice by clicking **Select**.
+1. In the **Access Controls** section, select **Grant**, 
+   - On the **Grant** blade, ensure that the **Grant** option is selected 
+   - Select **Require Multi-Factor Authentication** checkbox and select **Select**.
 
-1. Back on the **New** blade, set the **Enable policy** switch to **On** and select **Create**.
+1. Back on the **New** blade, set the **Enable policy** switch to **On** and click **Create**.
 
 
 #### Task 3: Verify Azure AD conditional access
 
-1. Within the Remote Desktop session to **az30310a-vm1**, start a new **InPrivate Browsing** Internet Explorer window and navigate to the Access Panel Applications portal [https://account.activedirectory.windowsazure.com](https://account.activedirectory.windowsazure.com).
+1. Within the Remote Desktop session to **US-DC01**, start a new **Incognito** window and navigate to [Azure Portal](https://portal.azure.com).
 
-1. When prompted, sign in by using the synchronized Azure AD account of the **aduser1**, using the full user name you recorded in the previous exercise and the **Pa55w.rd1234** password. 
+1. When prompted, sign in by using the synchronized Azure AD account of the *choose any account you prefer*, using the full user name you recorded in the previous exercise.
+    | Setting | Value |
+    | --- | --- |
+    | User Name | **user22@AZURE-AD-DOMAIN-NAME** |
+    | Password | **London2020*** |
+
+1. Navigate to the [Access Panel Applications Portal](https://account.activedirectory.windowsazure.com).
 
 1. Verify that you can successfully sign in to the Access Panel Applications portal. 
 
-1. In the same browser window, navigate to the [Azure portal](https://portal.azure.com).
+1. In the same browser window, open a new tab and navigate to the [Azure portal](https://portal.azure.com).
 
-1. Note that, this time, you are presented with the message **More information required**. Within the page displaying the message, select **Next**. 
+1. Note that, this time, you are presented with the message **More information required**, click **Next**. 
 
-1. At that point, you will be redirected to the **Additional security verification** page, which will step you through configuring multi-factor authentication.
+1. You will be redirected to the **Additional security verification** page,
 
     > **Note**: Completing the multi-factor authentication configuration is optional. If you proceed, you will need to designate your mobile device as an authentication phone or to use it to run a mobile app.
+
+#DENYO
 
 
 #### Task 4: Remove Azure resources deployed in the lab
