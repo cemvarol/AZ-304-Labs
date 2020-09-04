@@ -365,7 +365,7 @@ The main tasks for this exercise are as follows:
 1. Note that, this time, you are presented with the message **More information required**, click **Next**
 > **Note** You won't be asked to provide your credentials, because you already have an authenticated session on the other tab within the same browser window. However the conditional access policy will check for Azure Portal Access.
 
-1. You will be redirected to the **Additional security verification** page,
+6. You will be redirected to the **Additional security verification** page,
 
     > **Note**: Completing the multi-factor authentication configuration is optional. If you proceed, you will need to designate your mobile device as an authentication phone or to use it to run a mobile app.
 
