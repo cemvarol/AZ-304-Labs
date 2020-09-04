@@ -268,7 +268,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Group Type | **Security** |
     | Group Name | **All Users** |
-    | Group Decription | Optional Value can be left empty |
+    | Group Decription | Optional Value, can be left empty |
     | Membership Type | **Dynamic User** |
  
 1. Click  **Add Dynamic Query**
