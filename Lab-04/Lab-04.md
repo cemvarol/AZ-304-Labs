@@ -118,15 +118,13 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab04\Set-Lab.ps1"
 1. Observe the created users and groups in Local Domain.
 > **Note**: This will create 50 users. They will be under OUs, and set for their group memberships. Observe the created users on Active Directory users and Computers. this will also create a user name **OnPremAdmin**
 
-### Exercise 1: Create and configure an Azure AD tenant
+### Exercise 1: Configure an Azure AD tenant
 
 The main tasks for this exercise are as follows:
 
-1. Create an Azure AD tenant
+1. Activate and assign Azure AD Premium P2 licensing
 
 1. Create and configure Azure AD users
-
-1. Activate and assign Azure AD Premium P2 licensing
 
 
 #### Task 1: Activate and assign Azure AD Premium P2 licensing
