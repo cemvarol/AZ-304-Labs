@@ -108,13 +108,15 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab04\Set-Lab.ps1"
   ```
 > **Note**: After this script is run, the VM will be restarted automatically. You will need to re-connect to this vm on the next Task.
 
-#### Task 3: Create Domain Accounts
+#### Task 3: Create Local Domain Accounts
 
 1. Please connect to the same VM again. You can follow the steps 1-4 of Task 2.
 
 1. On the desktop of your profile, right click the Create AD Users.ps1 file and choose **Run with Powershell**
-1. Script will ask for **How many users to create** Provide 50 as the number of users to create, and hit Enter. Accept if any Powershell Policy asked to confirm. 
-> **Note**: This will create 50 users (or the amount you provide). They will be under OUs, and set for their group memberships. Observe the created users on Active Directory users and Computers. this will also create a user name **OnPremAdmin**
+1. Accept by typing A and hit Enter if any Powershell Policy is asked.
+1. Script will ask for **How many users to create** Provide 50 as the number of users to create, and hit Enter. 
+Observe the created users and groups in Local Domain.
+> **Note**: This will create 50 users. They will be under OUs, and set for their group memberships. Observe the created users on Active Directory users and Computers. this will also create a user name **OnPremAdmin**
 
 ### Exercise 1: Create and configure an Azure AD tenant
 
