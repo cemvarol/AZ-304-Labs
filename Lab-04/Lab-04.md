@@ -194,19 +194,19 @@ The main tasks for this exercise are as follows:
 
 #### Task 2:  Install Azure AD Connect
 
-1.Within the Remote Desktop session to **US-DC01** sign in to the [Azure portal](https://portal.azure.com), select **Azure Active Directory** and click **Azure AD Connect**.
+1.Within the Remote Desktop session to **US-DC01**, Navigate to [Azure portal](https://portal.azure.com), select **Azure Active Directory** and click **Azure AD Connect**.
 
 1. Select the **Download Azure AD Connect** link. You will be redirected to the **Microsoft Azure Active Directory Connect** download page, select **Download**.
 
-1. When prompted, select **Run** to start the **Microsoft Azure Active Directory Connect** wizard.
+1. After downloaded, **Run** to start the installation for **Microsoft Azure Active Directory Connect**.
 
 1. On the first page of the **Microsoft Azure Active Directory Connect** wizard, select the checkbox **I agree to the license terms and privacy notice** and select **Continue**.
 
-1. On the **Express Settings** Choose **Use Express Settings**.
+1. On the *Express Settings* step Choose **Use Express Settings**.
 
-1. On the **Connect to AZure AD** page, provide the login information of newly created AzAD account and click **Next**. (superman)
+1. On the **Connect to AZure AD** step, provide the login information of newly created AzAD account and click **Next**. (superman) *This is an account has the Global Administrator Role*
 
-1. On the **Connect to ADDS** page, provide the login information of *Enterprise Administrator* account **AURIAN\OnPremAdmin** with password *London2020**
+1. On the **Connect to ADDS** page, provide the login information of *Enterprise Administrator* account **AURIAN\OnPremAdmin** with password *London2020** *This account is created by the script*
 
     | Setting | Value |
     | --- | --- |
@@ -217,7 +217,7 @@ The main tasks for this exercise are as follows:
     
 1. On the **Ready to configure** page, **UNCHECK** the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
 
-    > **Note**: Installation should take about 2 minutes.
+    > **Note**: Installation should take about 2-4 minutes.
 
 DENYO
 ------------------------------------------------------------------------------------------
