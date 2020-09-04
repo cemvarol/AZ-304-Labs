@@ -190,7 +190,8 @@ The main tasks for this exercise are as follows:
 1. On the **adatum.com** blade, review the information necessary to perform verification of the Azure AD domain name and close the blade.
 
     > **Note**: You will not be able to complete the validation process because you do not own the **adatum.com** DNS domain name. This will *not* prevent you from synchronizing the **adatum.com** Active Directory domain with the Azure AD tenant. You will use for this purpose the default primary DNS name of the Azure AD tenant (the name ending with the **onmicrosoft.com** suffix), which you identified earlier in this task. However, keep in mind that, as a result, the DNS domain name of the Active Directory domain and the DNS name of the Azure AD tenant will differ. This means that Adatum users will need to use different names when signing in to the Active Directory domain and when signing in to Azure AD tenant.
-
+   
+   > **Note**: As explained earlier, this is expected, since you could not verify the custom Azure AD DNS domain **adatum.com**.
 
 #### Task 2:  Install Azure AD Connect
 
@@ -218,27 +219,52 @@ The main tasks for this exercise are as follows:
 1. On the **Ready to configure** page, **UNCHECK** the **Start the synchronization process when configuration completes** checkbox is selected and select **Install**.
 
     > **Note**: Installation should take about 2-4 minutes.
+    
+1. **Configuration Complete** step, click **Exit** to complete the installation.
 
-DENYO
-------------------------------------------------------------------------------------------
+1. Navigate to Azure Active Directory, click Users, ensure that the new account with the name **On-Premises Directory Synchronization Service Account** is created.
 
-1. On the **User sign-in** page, ensure that only the **Password Hash Synchronization** is enabled and select **Next**.
+#### Task 3:  Configure Azure AD Connect
+
+1. Double-Click the **Azure Ad Connect** to configure the settings of Azure AD Connect.
+
+1. On the **Welcome to Azure AD Connect** step, click **Configure**
+
+1. On the **Additional Taks** step, choose **Customize Synchronization Options**, and click **Next**
+
+**User sign-in** page, ensure that only the **Password Hash Synchronization** is enabled and select **Next**.
 
 1. On the **Connect to Azure AD** page, authenticate by using the credentials of the **az30310-aaduser1** user account you created in the previous exercise and select **Next**. 
 
+1. On the **Connect to AZure AD** step, provide the password of Azure AD account and click **Next**. (superman) 
+
+1. On the **Connect your directories** step, click **Next**.
+
+1. On the **Domain and OU Filtering** step, choose **Sync Selected Domains and OUs**. Expand the aurian.club domain and uncheck the box next to domain name to clear all the boxes. 
+
+1. Under *Sync Selected Domains and OUs* 
+    - Choose either Tens or Twenties. (This proves that you can choose nested level of OUs to sync to Azure AD.
+    - Choose any other OUs, e.g. Thirties, Forties etc.
+    - Choose Groups
+
+1. Click **Next**
+
+1. On the **Optional Features** step, check **Password Writeback** and click **Next**
+
+1. On the **Ready to Configure** step, CHECK the box for **Start the synchronization process when configuration completes** and click **Configure**
+
+# DENYO
 
 
 
-1. On the **Connect your directories** page, select the **Add Directory** button to the right of the **adatum.com** forest entry.
-
-1. In the **AD forest account** window, ensure that the option to **Create new AD account** is selected, specify the following credentials, and select **OK**:
+is selected, specify the following credentials, and select **OK**:
 
     
 1. Back on the **Connect your directories** page, ensure that the **adatum.com** entry appears as a configured directory and select **Next**
 
 
 
-    > **Note**: As explained earlier, this is expected, since you could not verify the custom Azure AD DNS domain **adatum.com**.
+ 
 
 1. On the **Domain and OU filtering** page, select the option **Sync selected domains and OUs**, clear all checkboxes, select only the checkbox next to the **ToSync** OU, and select **Next**.
 
