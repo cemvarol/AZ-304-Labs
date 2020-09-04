@@ -39,4 +39,4 @@ az vm create --resource-group $RG -n $VM -l $L --image Win2019DataCenter --admin
 
 
 
-.
+#
