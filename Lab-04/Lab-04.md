@@ -389,48 +389,32 @@ The main tasks for this exercise are as follows:
     Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
     Install-Module MSOnline -Force
     ```
-1. In the **Administrator: Windows PowerShell** window, run the following to authenticate to the **Adatum Lab** Azure AD tenant:
+#DENYO
+
+1. Run the following to authenticate to the Azure AD tenant:
 
    ```powershell
    Connect-MsolService
    ```
-
-1. When prompted to authenticate, provide the credentials of the **az30310-aaduser1** user account.
-
-1. In the **Administrator: Windows PowerShell** window, run the following to disable Azure AD Connect synchronization:
+1. When prompted to authenticate, provide the credentials of the **superman** account with AAD domain extension.
+    - If any browser problem occurs, here down the solution. Else go to the next step
+        - Click Server Manager on the Start Menu, to start Server Manager.
+        - Close the small dialog box with the message "Try managing servers with admin center"
+        - Click Local Server
+        - Set IE Enchanted Security Configuration to OFF
+        
+1. After signing in, run the following to disable Azure AD Connect synchronization:
 
    ```powershell
    Set-MsolDirSyncEnabled -EnableDirSync $false -Force
    ```
+1. On the **Users - All users** blade, select each user account you synchronized click **Delete** in the toolbar.
 
-1. From the lab computer, in the browser window displaying the Azure portal, navigate to the **Azure Active Directory Premium P2 - Licensed users** blade, select the user accounts to which you assigned licenses in this lab, select **Remove license**, and, when prompted to confirm, select **OK**.
+> **Note:** The synchronized accounts will be labelled as **Yes** under **Directory Synched** column
 
-1. In the Azure portal, navigate to the **Users - All users** blade and ensure that all user accounts you created in this lab have the **Azure Active Directory** entry in the **Source** column. 
+1. Within the Remote Desktop session to **US-DC01**, navigate to Azure portal
 
-    > **Note**: If that's not the case, refresh the browser page.
+1. Delete the Resource Group **AZ-304Lab-04**
 
-1. On the **Users - All users** blade, select each user accounts you created in this lab and select **Delete** in the toolbar. 
+   >**Note**: This will automatically delete the remote server and your remote session will be terminated.
 
-1. Navigate to the **Adatum Lab - Overview** blade of the Adatum Lab Azure AD tenant, select **Delete tenant**, on the **Delete directory 'Adatum Lab'** blade, select the **Get permission to delete Azure resources** link, on the **Properties** blade of Azure Active Directory, set **Access management for Azure resources** to **Yes** and select **Save**.
-
-1. Sign out from the Azure portal and sign in back. 
-
-1. Navigate back to the **Delete directory 'Adatum Lab'** blade and select **Delete**.
-
-1. Within the Remote Desktop session to **az30310a-vm1**, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30310*'
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30310*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-1. Close the Cloud Shell pane.
