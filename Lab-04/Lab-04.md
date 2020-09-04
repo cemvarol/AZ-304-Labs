@@ -374,21 +374,21 @@ The main tasks for this exercise are as follows:
 
 #### Task 4: Remove Azure resources deployed in the lab
 
-1. Within the Remote Desktop session to **az30310a-vm1**, start Internet Explorer and browse to the Microsoft Online Services Sign-In Assistant for IT Professionals RTW at [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://go.microsoft.com/fwlink/p/?LinkId=286152). 
+1. Within the Remote Desktop session to **US-DC01**, browse to the at [Microsoft Online Services Sign-In Assistant for IT Professionals RTW](https://go.microsoft.com/fwlink/p/?LinkId=286152). 
 
-1. On the Microsoft Online Services Sign-In Assistant for IT Professionals RTW download page, select **Download**, on the **Choose the download you want** page, select **en\msoidcli_64.msi**, and select **Next**. 
+1. Click **Download**, Select **en\msoidcli_64.msi**, and click **Next**. 
 
-1. When prompted, run **Microsoft Online Services Sign-in Assistant Setup** with the default options.
+1. Run the downloaded file **Microsoft Online Services Sign-in Assistant Setup** with the *default options*
 
-1. Once the setup completes, within the Remote Desktop session to **az30310a-vm1**, start **Windows PowerShell** console.
+1. Once the setup completes, Start **Windows PowerShell** console.
 
-1. In the **Administrator: Windows PowerShell** window, run the following to install the required PowerShell module:
+1. Run the following to install the required PowerShell module:
 
-   ```powershell
-   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-   Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-   Install-Module MSOnline -Force
-   ```
+ ```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Install-Module MSOnline -Force
+```
 1. In the **Administrator: Windows PowerShell** window, run the following to authenticate to the **Adatum Lab** Azure AD tenant:
 
    ```powershell
