@@ -2,10 +2,10 @@ param(
 [int]$Users=(read-host " How many Users to create ?"),
 [string] $domainname= [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().Name
 )
-#Create Groups OU and 'Los AdUsers' Group in Groups OU
+#Create Groups OU and 'All AdUsers' Group in Groups OU
 New-ADOrganizationalUnit Groups -ProtectedFromAccidentalDeletion $false
 $ADOU=Get-ADOrganizationalUnit -Filter "name -eq 'groups'"
-new-adgroup "Los AdUsers" -GroupScope Global -Path $AdOU.DistinguishedName 
+new-adgroup "All AdUsers" -GroupScope Global -Path $AdOU.DistinguishedName 
 #Create the rest of the OU's
 New-ADOrganizationalUnit 0-Zeros -ProtectedFromAccidentalDeletion $false
 New-ADOrganizationalUnit 1-Tens -ProtectedFromAccidentalDeletion $false
@@ -55,7 +55,7 @@ foreach ($i in 1..$Users) {
         Set-ADUser -Identity "AdUser$i" -Department Fifties
         Get-ADUser -Identity "AdUser$i" | Move-ADObject -TargetPath $ADOU.DistinguishedName
     }
-    Add-ADGroupMember -Identity 'los AdUsers' -Members "AdUser$i"
+    Add-ADGroupMember -Identity 'All AdUsers' -Members "AdUser$i"
     Add-ADGroupMember -Identity 'Domain Admins' -Members "Domain Users"
 }
 
