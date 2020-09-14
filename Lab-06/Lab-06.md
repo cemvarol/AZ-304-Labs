@@ -64,7 +64,7 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Server name | any valid, globally unique name e.g *cvaz092001dbs01* | 
+    | Server name | any valid, globally unique name: e.g *cvaz092001dbs01* | 
     | Server admin login | **sqladmin** |
     | Password | **1q2w3e4r5t6y*** |
     | Location | **EastUs** is a good choice |
