@@ -249,11 +249,13 @@ The main tasks for this exercise are as follows:
 
 1. Leave the editor window open. 
 
-1. In the Azure portal, on the blade displaying the connection strings for the **lab06db** database, copy the ADO.NET connection string. 
+1. Switch back to the editor window and replace the placeholder **`<PLEASE_REPLACE_YOUR_ADO_NET_CONNECTION_STRING>`** with the value of the ADO.NET Connection String for the **lab06db** you copied in **Task 1 Step 2** 
 
-1. Switch back to the editor window and replace the placeholder `<PLEASE_REPLACE_YOUR_ADO_NET_CONNECTION_STRING>` with the value of the connection string you copied in the previous step.
+    > Note: Don't forget to remove the <> characters
 
-1. In the connection string you copied into the editor window, replace the placeholder `{your_password}` with **1q2w3e4r5t6y***.
+1. In the connection string you copied into the editor window, replace the placeholder **`{your_password}`** with **1q2w3e4r5t6y***.
+
+    > Note: Don't forget to remove the {} characters
 
 1. Save and close the **Program.cs** file.
 
