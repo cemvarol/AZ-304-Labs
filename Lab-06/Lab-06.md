@@ -31,20 +31,12 @@ After completing this lab, you will be able to:
 -  Configure .NET Core-based console apps that use Azure SQL Database as their data store
 
 
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **qa**
-
--  Password: **1q2w3e4r5t6y***
-
-Estimated Time: 60 minutes
+Estimated Time: 30 minutes
 
 
 ## Lab Files
 
--  None
+-  Program.cs
 
 
 ### Exercise 1: Implement Azure SQL Database
