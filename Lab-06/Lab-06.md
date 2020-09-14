@@ -1,3 +1,6 @@
+az304lab06
+
+
 
 ---
 lab:
@@ -161,11 +164,11 @@ The main tasks for this exercise are as follows:
 
     >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1. From the Cloud Shell pane, run the following to create a new folder named **az30303a1** and set it as your current directory:
+1. From the Cloud Shell pane, run the following to create a new folder named **az304lab06** and set it as your current directory:
 
    ```sh
-   mkdir az30303a1
-   cd az30303a1/
+   mkdir az304lab06
+   cd az304lab06/
    ```
 
 1. From the Cloud Shell pane, run the following to create a new app project file for a .NET Core-based app based on the desktop template:
@@ -174,7 +177,7 @@ The main tasks for this exercise are as follows:
    dotnet new console
    ```
 
-1. In the Cloud Shell pane, use the built in editor to open and modify the **az30303a1.csproj** file by adding the following XML element between the `<Project>` tags: 
+1. In the Cloud Shell pane, use the built in editor to open and modify the **az304lab06.csproj** file by adding the following XML element between the `<Project>` tags: 
 
    ```xml
    <ItemGroup>
@@ -182,7 +185,7 @@ The main tasks for this exercise are as follows:
    </ItemGroup>
    ```
 
-1. Save and close the **az30303a1.csproj** file.
+1. Save and close the **az304lab06.csproj** file.
 
 1. In the Cloud Shell pane, use the built in editor to open and modify the **Program.cs** file by replacing its content with the following code: 
 
@@ -316,10 +319,10 @@ The main tasks for this exercise are as follows:
    az group list --query "[?starts_with(name,'az30303')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
-1. From the Cloud Shell pane, run the following to remove the folder named **az30303a1**:
+1. From the Cloud Shell pane, run the following to remove the folder named **az304lab06**:
 
    ```sh
-   rm -r ~/az30303a1
+   rm -r ~/az304lab06
    ```
 
 1. Close the Cloud Shell pane.
