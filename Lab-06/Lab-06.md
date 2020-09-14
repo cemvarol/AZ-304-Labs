@@ -177,13 +177,18 @@ The main tasks for this exercise are as follows:
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
+       
      <PropertyGroup>
-     <OutputType>Exe</OutputType>
-     <TargetFramework>netcoreapp2.2</TargetFramework>
-   </PropertyGroup>   
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+     </PropertyGroup>   
+       
    <ItemGroup>
        <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
    </ItemGroup>
+       
+    </Project>
+       
    ```
 
 1. Save and close the **az304lab06.csproj** file.
