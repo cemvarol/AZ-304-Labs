@@ -5,7 +5,7 @@ lab:
 ---
 
 # Lab: Implementing Azure SQL Database-Based Applications
-# Student lab manual
+# qa lab manual
 
 ## Lab scenario
 
@@ -35,9 +35,9 @@ After completing this lab, you will be able to:
   
 Windows Server admin credentials
 
--  User Name: **Student**
+-  User Name: **qa**
 
--  Password: **Pa55w.rd1234**
+-  Password: **1q2w3e4r5t6y***
 
 Estimated Time: 60 minutes
 
@@ -76,7 +76,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Server name | any valid, globally unique name | 
     | Server admin login | **sqladmin** |
-    | Password | **Pa55w.rd1234** |
+    | Password | **1q2w3e4r5t6y*** |
     | Location | the name of an Azure region where you can provision SQL databases |
     | Allow Azure services to access server | ***Select the checkbox*** |
 
@@ -114,7 +114,7 @@ The main tasks for this exercise are as follows:
 
 1. On the SQL database blade, select **Query editor (preview)**.
 
-1. In the **SQL Server authentication** section, in the **Password** textbox, type **Pa55w.rd1234** and select **OK**.
+1. In the **SQL Server authentication** section, in the **Password** textbox, type **1q2w3e4r5t6y*** and select **OK**.
 
 1. In the **Query editor (preview)** pane, on the **Query 1** tab, enter the following query and select **Run**:
 
@@ -243,7 +243,7 @@ The main tasks for this exercise are as follows:
 
 1. Switch back to the editor window and replace the placeholder `<your_ado_net_connection_string>` with the value of the connection string you copied in the previous step.
 
-1. In the connection string you copied into the editor window, replace the placeholder `{your_password}` with **Pa55w.rd1234**.
+1. In the connection string you copied into the editor window, replace the placeholder `{your_password}` with **1q2w3e4r5t6y***.
 
 1. Save and close the **Program.cs** file.
 
