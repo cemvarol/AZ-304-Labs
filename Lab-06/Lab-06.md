@@ -95,7 +95,7 @@ The main tasks for this exercise are as follows:
 
 1. Select **Review + create** and then select **Create**. 
 
-    >**Note**: Wait for the SQL database to be created. Provisioning should take about 2 minutes. 
+    >**Note**: Wait for the SQL database to be created. Provisioning should take about 2-4 minutes. 
 
 
 #### Task 2: Connect to and query Azure SQL Database
