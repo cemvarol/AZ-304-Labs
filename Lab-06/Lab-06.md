@@ -64,11 +64,11 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Server name | any valid, globally unique name | 
+    | Server name | any valid, globally unique name e.g *cvaz092001dbs01* | 
     | Server admin login | **sqladmin** |
     | Password | **1q2w3e4r5t6y*** |
-    | Location | the name of an Azure region where you can provision SQL databases |
-    | Allow Azure services to access server | ***Select the checkbox*** |
+    | Location | **EastUs** is a good choice |
+    | Allow Azure services to access server | ***If asked, Select the checkbox*** |
 
 1. Next to the **Compute + storage** label, select the **Configure database** link.
 
