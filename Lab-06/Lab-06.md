@@ -5,7 +5,7 @@ lab:
 ---
 
 # Lab: Implementing Azure SQL Database-Based Applications
-# Student Lab Manual
+# qa lab manual
 
 ## Lab scenario
 
@@ -31,12 +31,20 @@ After completing this lab, you will be able to:
 -  Configure .NET Core-based console apps that use Azure SQL Database as their data store
 
 
-Estimated Time: 30 minutes
+## Lab Environment
+  
+Windows Server admin credentials
+
+-  User Name: **qa**
+
+-  Password: **1q2w3e4r5t6y***
+
+Estimated Time: 60 minutes
 
 
 ## Lab Files
 
--  Program.cs
+-  None
 
 
 ### Exercise 1: Implement Azure SQL Database
@@ -69,8 +77,8 @@ The main tasks for this exercise are as follows:
     | Server name | any valid, globally unique name | 
     | Server admin login | **sqladmin** |
     | Password | **1q2w3e4r5t6y*** |
-    | Location | **EastUs** |
-    | Allow Azure services to access server | ***If asked, Select the checkbox*** |
+    | Location | the name of an Azure region where you can provision SQL databases |
+    | Allow Azure services to access server | ***Select the checkbox*** |
 
 1. Next to the **Compute + storage** label, select the **Configure database** link.
 
@@ -168,20 +176,9 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, use the built in editor to open and modify the **az304lab06.csproj** file by adding the following XML element between the `<Project>` tags: 
 
    ```xml
-
- <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
-  </ItemGroup>
-
-</Project>
-
+   <ItemGroup>
+       <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+   </ItemGroup>
    ```
 
 1. Save and close the **az304lab06.csproj** file.
