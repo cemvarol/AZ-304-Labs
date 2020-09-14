@@ -11,7 +11,7 @@ namespace sqltest
             try 
             { 
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.ConnectionString="<your_ado_net_connection_string>";
+                builder.ConnectionString="<PLEASE_REPLACE_YOUR_ADO_NET_CONNECTION_STRING>";
 
                 using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                 {
