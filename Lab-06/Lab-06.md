@@ -168,9 +168,18 @@ The main tasks for this exercise are as follows:
 1. In the Cloud Shell pane, use the built in editor to open and modify the **az304lab06.csproj** file by adding the following XML element between the `<Project>` tags: 
 
    ```xml
-   <ItemGroup>
-       <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
-   </ItemGroup>
+ <Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
    ```
 
 1. Save and close the **az304lab06.csproj** file.
