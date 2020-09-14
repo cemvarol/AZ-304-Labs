@@ -58,7 +58,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Subscription | the name of the Azure subscription you will be using in this lab |
     | Resource group | the name of a new resource group **AZ-304Lab-04** |
-    | Database name | **lab04db** | 
+    | Database name | **lab06db** | 
 
 1. Directly below the **Server** drop down list, select the **Create new** and, on the **New server** blade, specify the following settings and select **OK** (leave others with their default values):
 
@@ -100,7 +100,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Connect to and query Azure SQL Database
 
-1. In the Azure portal, search for and select **SQL database** and, on the **SQL databases** blade, select the entry representing the newly created **lab04db** Azure SQL database.
+1. In the Azure portal, search for and select **SQL database** and, on the **SQL databases** blade, select the entry representing the newly created **lab06db** Azure SQL database.
 
 1. On the SQL database blade, select **Query editor (preview)**.
 
@@ -249,7 +249,7 @@ The main tasks for this exercise are as follows:
 
 1. Leave the editor window open. 
 
-1. In the Azure portal, on the blade displaying the connection strings for the **lab04db** database, copy the ADO.NET connection string. 
+1. In the Azure portal, on the blade displaying the connection strings for the **lab06db** database, copy the ADO.NET connection string. 
 
 1. Switch back to the editor window and replace the placeholder `<PLEASE_REPLACE_YOUR_ADO_NET_CONNECTION_STRING>` with the value of the connection string you copied in the previous step.
 
@@ -308,7 +308,7 @@ The main tasks for this exercise are as follows:
    curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
    ```
 
-1. In the Azure portal, on the blade displaying the connection strings for the **lab04db** database, select **Overview** and, in the toolbar, select **Set server firewall**.
+1. In the Azure portal, on the blade displaying the connection strings for the **lab06db** database, select **Overview** and, in the toolbar, select **Set server firewall**.
 
 1. On the **Firewall settings** blade, set the following entries and select **Save**:
 
@@ -337,7 +337,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
 
    ```sh
-   az group list --query "[?contains(name,'lab04')]".name --output tsv
+   az group list --query "[?contains(name,'lab06')]".name --output tsv
    ```
 
     > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
@@ -345,7 +345,7 @@ The main tasks for this exercise are as follows:
 1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
 
    ```sh
-   az group list --query "[?contains(name,'lab04')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+   az group list --query "[?contains(name,'lab06')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
 1. From the Cloud Shell pane, run the following to remove the folder named **az304lab06**:
