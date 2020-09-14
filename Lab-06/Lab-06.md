@@ -173,7 +173,17 @@ The main tasks for this exercise are as follows:
    dotnet new console
    ```
 
-1. In the Cloud Shell pane, use the built in editor to open and modify the **az304lab06.csproj** file by adding the following XML element between the `<Project>` tags: 
+1. In the Cloud Shell pane, type **ls** to get the list of the files. Ensure that you have two files, **Program.cs** and **az304lab06.csproj**, or a similar name with the **csproj** file extension. 
+
+1. On the **Bash** command line top bar, click the fourth icon, **upload/download** files
+
+1. Download both **Program.cs** and  **az304lab06.csproj** files
+
+1. Provide the file name as **/az304lab06/Program.cs** to download Program.cs file
+
+1. Provide the file name as **/az304lab06/az304lab06.csproj** to download az304lab06.csproj file
+
+1. Open the **az304lab06.csproj** file with notepad or any other editor, and *replace* its content with the following xml script: 
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
@@ -188,7 +198,7 @@ The main tasks for this exercise are as follows:
 
 1. Save and close the **az304lab06.csproj** file.
 
-1. In the Cloud Shell pane, use the built in editor to open and modify the **Program.cs** file by replacing its content with the following code: 
+1. Open the **Program.cs** file with notepad or any other editor, and *replace* its content with the following code: 
 
    ```cs
    using System;
@@ -246,7 +256,7 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, on the blade displaying the connection strings for the **lab04db** database, copy the ADO.NET connection string. 
 
-1. Switch back to the editor window and replace the placeholder `<your_ado_net_connection_string>` with the value of the connection string you copied in the previous step.
+1. Switch back to the editor window and replace the placeholder `<PLEASE_REPLACE_YOUR_ADO_NET_CONNECTION_STRING>` with the value of the connection string you copied in the previous step.
 
 1. In the connection string you copied into the editor window, replace the placeholder `{your_password}` with **1q2w3e4r5t6y***.
 
