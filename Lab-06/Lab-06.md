@@ -167,7 +167,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Bash** command line top bar, click the fourth icon, **upload/download** files
 
-1. Download both **Program.cs** and  **az304lab06.csproj** files
+1. Choose **Download** on the menu
 
 1. Provide the file name as **/az304lab06/Program.cs** to download Program.cs file
 
