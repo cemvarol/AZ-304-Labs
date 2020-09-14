@@ -254,7 +254,7 @@ The main tasks for this exercise are as follows:
 
 1. On the **Bash** console, type comnmands below to remove previous files (We replaced the content of those on local)
 
-```sh
+   ```sh
    rm *.csproj
    rm *.cs
    ```
@@ -265,9 +265,7 @@ The main tasks for this exercise are as follows:
 
 1. Run the command below to copy the files to their original location.
 
-```sh
-   rm *.csproj
-   rm *.cs
+   ```sh
    x="$(whoami)"
    y=/home/$x
    w=$(echo "$y"/*.cs)
