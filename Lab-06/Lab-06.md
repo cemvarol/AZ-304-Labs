@@ -1,3 +1,4 @@
+
 ---
 lab:
     title: '6: Implementing Azure SQL Database-Based Applications'
@@ -67,8 +68,8 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you will be using in this lab |
-    | Resource group | the name of a new resource group **az30303a-labRG** |
-    | Database name | **az30303a-db1** | 
+    | Resource group | the name of a new resource group **AZ-304Lab-04** |
+    | Database name | **lab04db** | 
 
 1. Directly below the **Server** drop down list, select the **Create new** and, on the **New server** blade, specify the following settings and select **OK** (leave others with their default values):
 
@@ -110,7 +111,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Connect to and query Azure SQL Database
 
-1. In the Azure portal, search for and select **SQL database** and, on the **SQL databases** blade, select the entry representing the newly created **az30303a-db1** Azure SQL database.
+1. In the Azure portal, search for and select **SQL database** and, on the **SQL databases** blade, select the entry representing the newly created **lab04db** Azure SQL database.
 
 1. On the SQL database blade, select **Query editor (preview)**.
 
@@ -239,7 +240,7 @@ The main tasks for this exercise are as follows:
 
 1. Leave the editor window open. 
 
-1. In the Azure portal, on the blade displaying the connection strings for the **az30303a-db1** database, copy the ADO.NET connection string. 
+1. In the Azure portal, on the blade displaying the connection strings for the **lab04db** database, copy the ADO.NET connection string. 
 
 1. Switch back to the editor window and replace the placeholder `<your_ado_net_connection_string>` with the value of the connection string you copied in the previous step.
 
@@ -275,7 +276,7 @@ The main tasks for this exercise are as follows:
    curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
    ```
 
-1. In the Azure portal, on the blade displaying the connection strings for the **az30303a-db1** database, select **Overview** and, in the toolbar, select **Set server firewall**.
+1. In the Azure portal, on the blade displaying the connection strings for the **lab04db** database, select **Overview** and, in the toolbar, select **Set server firewall**.
 
 1. On the **Firewall settings** blade, set the following entries and select **Save**:
 
