@@ -5,7 +5,7 @@ lab:
 ---
 
 # Lab: Implementing Azure SQL Database-Based Applications
-# qa lab manual
+# Student Lab manual
 
 ## Lab scenario
 
@@ -35,17 +35,7 @@ After completing this lab, you will be able to:
   
 Windows Server admin credentials
 
--  User Name: **qa**
-
--  Password: **1q2w3e4r5t6y***
-
-Estimated Time: 60 minutes
-
-
-## Lab Files
-
--  None
-
+Estimated Time: 45 minutes
 
 ### Exercise 1: Implement Azure SQL Database
   
@@ -261,6 +251,31 @@ The main tasks for this exercise are as follows:
 1. In the connection string you copied into the editor window, replace the placeholder `{your_password}` with **1q2w3e4r5t6y***.
 
 1. Save and close the **Program.cs** file.
+
+1. On the **Bash** console, type comnmands below to remove previous files (We replaced the content of those on local)
+
+```sh
+   rm *.csproj
+   rm *.cs
+   ```
+
+1. Run the command ls to make sure that files are deleted. (They won't be listed after this query)
+
+1. Drag and drop both files you modified on previous steps to Bash console.
+
+1. Run the command below to copy the files to their original location.
+
+```sh
+   rm *.csproj
+   rm *.cs
+   x="$(whoami)"
+   y=/home/$x
+   w=$(echo "$y"/*.cs)
+   z=$(echo "$y"/*.csproj)
+   cp $w .
+   cp $z .
+   ```
+1. Run the command ls to make sure that files are uploaded. (They will be listed after this query)
 
 
 #### Task 3: Test the .NET Core console app
