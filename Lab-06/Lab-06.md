@@ -169,11 +169,11 @@ The main tasks for this exercise are as follows:
 
 1. Choose **Download** on the menu
 
-1. Provide the file name as **/az304lab06/Program.cs** to download Program.cs file
+1. Provide the file name as **/az304lab06/Program.cs** and click *download*
 
-1. Provide the file name as **/az304lab06/az304lab06.csproj** to download az304lab06.csproj file
+1. Provide the file name as **/az304lab06/az304lab06.csproj** and click *download*
 
-1. Open the **az304lab06.csproj** file with notepad or any other editor, and *replace* its content with the following xml script: 
+1. Open the downloaded **az304lab06.csproj** file with notepad or any other editor, and *replace* its content with the following xml script: 
 
    ```xml
    <Project Sdk="Microsoft.NET.Sdk">
@@ -193,7 +193,7 @@ The main tasks for this exercise are as follows:
 
 1. Save and close the **az304lab06.csproj** file.
 
-1. Open the **Program.cs** file with notepad or any other editor, and *replace* its content with the following code: 
+1. Open the downloaded **Program.cs** file with notepad or any other editor, and *replace* its content with the following code: 
 
    ```cs
    using System;
