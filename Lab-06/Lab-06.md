@@ -5,7 +5,7 @@ lab:
 ---
 
 # Lab: Implementing Azure SQL Database-Based Applications
-# qa lab manual
+# Student Lab Manual
 
 ## Lab scenario
 
