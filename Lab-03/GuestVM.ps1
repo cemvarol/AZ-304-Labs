@@ -23,11 +23,11 @@ netsh int ip set DNS "EthernetX" static 8.8.8.8
 
 Set-NetFirewallProfile -Enabled False
 
-$date=(get-date)
-
 Add-WindowsFeature Web-Server, Web-Mgmt-Tools
 
 Set-NetFirewallProfile -Enabled False
+
+$date=(get-date)
 
 Add-Content -Path "C:\inetpub\wwwroot\Default.htm" -Value "<html><body><h1>Hello From On prem, Today's date is $date</h1></body></html>"
 
