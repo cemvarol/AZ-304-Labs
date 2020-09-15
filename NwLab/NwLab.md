@@ -151,7 +151,7 @@ The main tasks for this exercise are as follows:
 
     - User name: **QA**
 
-    - Password: **1q2w3e4r5t6y*1234**
+    - Password: **1q2w3e4r5t6y***
 
 3. In the Remote Desktop session to VM-B, run the **powershell** command below on that vm
 
