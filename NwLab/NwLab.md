@@ -87,7 +87,7 @@ The main tasks for this exercise are as follows:
 
     - Subscription: the name of the Azure subscription you use for this lab
 
-    - Resource group: **304NwLab-LabRG**
+    - Resource group: **304NwLab-RG01**
 
     - Location: the same Azure region in which you created the virtual networks
   
@@ -201,7 +201,7 @@ The main tasks for this exercise are as follows:
 
     - Leave the **Subscription** drop-down list entry set to its default value.
 
-    - In the **Resource group** drop-down list, select the **304NwLab-LabRG** entry.
+    - In the **Resource group** drop-down list, select the **304NwLab-RG01** entry.
 
     - In the **Virtual machine** drop-down list, choose **VM-A**.
     
