@@ -18,7 +18,13 @@ Password: **1q2w3e4r5t6y***
 
 1. From the Cloud Shell pane, open a bash command line and run the script shown below
 
-Please Check this script [Create Resources](https://raw.githubusercontent.com/cemvarol/AZ-301-Updates-Errors/master/M8/Create-At-WestEurope)
+
+```sh
+curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/NwLab/NwLab-Resources.bash
+ls -la NwLab-Resources.bash
+chmod +x NwLab-Resources.bash
+./NwLab-Resources.bash
+```
 
 ## Exercise 2: Configuring VNet peering 
 
