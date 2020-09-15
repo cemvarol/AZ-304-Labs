@@ -250,9 +250,9 @@ The main tasks for this exercise are as follows:
    4. **Replication Policy**
          - **Create new policy and associate**. (Leave default settings, ensure you assign a **Name** and set initial Replication as **Immediately**)
          - Name: Provide a name e.g: **Rep-Pol**
-           - Copy Frequency
-           - Recovery point retention in hours
-           - App-Consistent snapshot frequency in hours
+           - Copy Frequency **5 Minutes**
+           - Recovery point retention in hours **Default Values**
+           - App-Consistent snapshot frequency in hours **Default Values**
            - Initial Replication start time: **Immediately**	
            - Click **Next** after completed	
             
