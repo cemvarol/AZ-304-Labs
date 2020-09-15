@@ -7,8 +7,8 @@ C=${B:: -24}
 D=$(echo "$C"rg01x)
 E=$(echo "$C"rg02x)
 #Provide Resource Values
-RG1=304NwLab-LabRG
-RG2=AADLab0802-LabRG
+RG1=304NwLab-RG01
+RG2=304NwLab-RG02
 VNet1=VNet01
 VNet2=VNet02 
 Nsg1=NSG1
