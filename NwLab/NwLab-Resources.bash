@@ -4,8 +4,8 @@ a=$(az ad signed-in-user show --query userPrincipalName)
 A=$(echo "$a" | sed -e 's/\(.*\)/\L\1/')
 B=${A:$(echo `expr index "$A" @`)}
 C=${B:: -24}
-D=$(echo "$C"rg01x)
-E=$(echo "$C"rg02x)
+D=$(echo "$C"rg01)
+E=$(echo "$C"rg02)
 #Provide Resource Values
 RG1=304NwLab-RG01
 RG2=304NwLab-RG02
