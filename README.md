@@ -8,3 +8,5 @@
 
 [Lab-13: Implement Azure Logic Apps integration with Azure Event Grid](https://github.com/cemvarol/AZ-304-Labs/blob/master/Lab-13/Lab-13.md)
 
+
+[Additional Lab: Configure Vnet Peering and Service Chaining](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
