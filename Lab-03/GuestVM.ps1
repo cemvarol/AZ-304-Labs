@@ -28,7 +28,7 @@ Add-WindowsFeature Web-Server, Web-Mgmt-Tools
 Set-NetFirewallProfile -Enabled False
 
 $date=(get-date)
-8hr
+
 Add-Content -Path "C:\inetpub\wwwroot\Default.htm" -Value "<html><body><h1>Hello From On prem, Today's date is $date (GMT-8hrs) </h1></body></html>"
 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
