@@ -25,3 +25,17 @@ Run the command below to create Managed Identity
 ```sh
 az identity create --resource-group IDLab1 --name mid01
 ```
+
+#### Task 2: Assign Managed Identity
+
+Run the command below to assign the Mid to the new VM
+
+```sh
+az vm identity assign --resource-group IDLab1 --name IDs-VM01 --identities mid01
+```
+
+#### Task 3: Assign Roles to Managed Identity
+
+1.	In the Azure portal, assign reader role to mid01 on IDLab1
+2.	In the Azure portal, assign owner role to mid01 on IDLab2
+
