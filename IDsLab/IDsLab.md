@@ -9,9 +9,19 @@
 3.	In the toolbar of the Cloud Shell pane, run the following command to create the vm.
 
 
-      ```powershell
+      ```sh
       curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/IDsLab/IDsLab-Resources.bash
       ls -la IDsLab-Resources.bash
       chmod +x IDsLab-Resources.bash
       ./IDsLab-Resources.bash
       ```
+      
+### Exercise 1: Create and Assign Managed Identity       
+      
+#### Task 1: Create the Managed Identity
+
+Run the command below to create Managed Identity
+
+```sh
+az identity create --resource-group IDLab1 --name mid01
+```
