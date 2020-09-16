@@ -60,5 +60,6 @@ az vm identity assign --resource-group IDLab1 --name IDs-VM01 --identities mid01
 -   Password: **1q2w3e4r5t6y\***
 
 
-
+#### Task 2: Prepare the Virtual Machine for Managed Identity
+      >Note: This is a Core Operating system. You will only see command prompt window. Type powershell on the command prompt to start the powershell session.
 
