@@ -10,8 +10,8 @@
 
 
       ```powershell
-   curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/IDsLab/IDsLab-Resources.bash
-   ls -la IDsLab-Resources.bash
-   chmod +x IDsLab-Resources.bash
-   ./IDsLab-Resources.bash
+      curl -O https://raw.githubusercontent.com/cemvarol/AZ-304-Labs/master/IDsLab/IDsLab-Resources.bash
+      ls -la IDsLab-Resources.bash
+      chmod +x IDsLab-Resources.bash
+      ./IDsLab-Resources.bash
         ```
