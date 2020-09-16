@@ -34,6 +34,8 @@ Run the command below to assign the Mid to the new VM
 az vm identity assign --resource-group IDLab1 --name IDs-VM01 --identities mid01
 ```
 
+
+When you type exit, you left the powershell session. This is needed to load the installed components
 #### Task 3: Assign Roles to Managed Identity
 
 1.	In the Azure portal, assign reader role to mid01 on IDLab1
@@ -63,7 +65,7 @@ az vm identity assign --resource-group IDLab1 --name IDs-VM01 --identities mid01
 #### Task 2: Prepare the Virtual Machine for Managed Identity
    >**Note:** This is a Core Operating system. You will only see command prompt window. Type powershell on the command prompt to start the powershell session.
 
-1. Run the Commands in the  Powershell  console individually
+1. Run the Commands in the  Powershell console to install Azure Powershell Library. **Please run them individually**
 
 ```powershell
 Install-Module -Name PowerShellGet -Force
@@ -73,4 +75,22 @@ Install-Module -Name Az -AllowClobber
 ```
 ```powershell
 exit
+```
+   >**Note:** When you type exit, you left the powershell session. This is needed to load the installed components
+   
+   
+Type powershell on the command prompt to start the powershell session again.
+
+1. Run the Commands in the powershell console to assign the Managed identity. **Please run them individually**
+
+```powershell
+Install-Module -Name PowerShellGet -AllowPrerelease
+```
+
+```powershell
+Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease
+```
+
+```powershell
+Add-AzAccount -Identity
 ```
