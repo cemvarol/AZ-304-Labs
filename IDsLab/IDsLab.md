@@ -42,14 +42,23 @@ az vm identity assign --resource-group IDLab1 --name IDs-VM01 --identities mid01
 
 ### Exercise 2: Use the assigned Managed Identity
 
+
 #### Task 1: Connect to the Virtual Machine
 
-1.	Select Virtual machines and, on the Virtual machines blade, select IDs-VM01.
-2.	Select Networking.
-3.	Select Connect, in the drop-down menu, select RDP, and then click Download RDP File.
-4.	When prompted, sign in with the following credentials:
-•	User Name: QA
-•	Password: 1q2w3e4r5t6y*
+1.  Select **Virtual machines** and, on the **Virtual machines** blade,
+    select **IDs-VM0**.
+
+2.  Select **Networking**.
+
+3.  Select **Connect**, in the drop-down menu, select **RDP**, and then
+    click **Download RDP File**.
+
+4.  When prompted, sign in with the following credentials:
+
+-   User Name: **QA**
+
+-   Password: **1q2w3e4r5t6y\***
+
 
 
 
