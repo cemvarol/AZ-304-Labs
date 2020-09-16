@@ -94,3 +94,67 @@ Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease
 ```powershell
 Add-AzAccount -Identity
 ```
+
+
+>**Note:** You have installed powershell library to your vm, and set your managed identity to use on that vm only.
+
+#### Task 3: Use the Manaed Identity
+
+From this point, the Azure Powershell commands will take actin on Azure Powershell Console directly. **Please run them individually**
+
+1. Run the command below to get IDLab2 Resource Group location
+
+```powershell
+Get-AzResourceGroup -Name IDLab2
+```
+
+1. Run the command below to save IDLab2 Resource Group location to a variable
+
+```powershell
+$location = (Get-AzResourceGroup -Name IDLab2).Location
+```
+
+1. Run the command below to create a public Ip address under IDLab2, within the location saved to the variable. 
+
+```powershell
+New-AzPublicIpAddress -Name TstPip01 -ResourceGroupName IDLab2 -AllocationMethod Dynamic -Location $location
+```
+
+1. Run the command below to create a public Ip address under IDLab1, within the location saved to the variable
+>**Note:** This will fail because Managed Identity has read permission on IDLab1
+
+```powershell
+New-AzPublicIpAddress -Name TstPip02 -ResourceGroupName IDLab1 -AllocationMethod Dynamic -Location $location
+```
+
+1. Run the command below to list the content of RGs **Please run them individually**
+
+```powershell
+Get-AzResource -ResourceGroupName "IDLab2"
+```
+
+```powershell
+Get-AzResource -ResourceGroupName "IDLab1"
+```
+
+
+### Exercise 3: Remove Azure resources deployed in the lab
+
+
+1. Navigate to Azure Portal from your lab Pc
+1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
+
+   ```sh
+   az group list --query "[?contains(name,'IDLab')]".name --output tsv
+   ```
+
+    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
+
+1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
+
+   ```sh
+   az group list --query "[?contains(name,'IDLab')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+   ```
+
+1. Close the Cloud Shell pane.
+
