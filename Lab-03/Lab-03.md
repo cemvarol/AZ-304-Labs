@@ -75,7 +75,7 @@ chmod +x Lab-03-Resources.bash
 #### Task 2: Configure nested virtualization in the Azure VM
 
 1.  Select **Virtual machines** and, on the **Virtual machines** blade,
-    select **Prot-VM01**.
+    select **Migrator**.
 
 2.  Select **Networking**.
 
