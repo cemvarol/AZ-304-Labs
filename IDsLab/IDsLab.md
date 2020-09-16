@@ -4,9 +4,8 @@
 
 
 #### Task 1: Deploy an Azure VM for the Lab
-1.	Open Cloud Shell pane by selecting on the toolbar icon directly to the right of the search textbox.
-2.	If prompted, select Bash .
-Note: If this is the first time you are starting Cloud Shell and you are presented with the You have no storage mounted message, select the subscription you are using in this lab, and select Create storage.
+1. Navigate to the [Azure portal](https://portal.azure.com), and  [Azure Shell](https://shell.azure.com)   sign in by your credentials.
+1. In the **Cloud Shell**, select  **Bash** , run the command below to create a new vm for this exercise
 3.	In the toolbar of the Cloud Shell pane, run the following command to create the vm.
 
    ```powershell
