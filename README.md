@@ -14,3 +14,5 @@
 [Additional Lab: Managed Identities](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
 
 [Additional Lab: Azure BluePrints](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
+
+[Additional Lab: S2S & P2S VPN](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
