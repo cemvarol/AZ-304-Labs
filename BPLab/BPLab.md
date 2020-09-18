@@ -1,4 +1,4 @@
-# Module 2: Lab 20 - Azure Blueprints
+# Azure Blueprints
 
 
 **Scenario**
@@ -305,7 +305,7 @@ If you no longer need a blueprint assignment, remove it from a subscription. The
 **Note**: Deleting a blueprint in this method also deletes all published versions of the selected blueprint. To delete a single version, open the blueprint, select the **Published versions** tab, select the version that you want to delete, and then select **Delete This Version**. Also, you can't delete a blueprint until you've deleted all blueprint assignment of that blueprint definition.
 
 
-| WARNING: Prior to continuing you should remove all resources used for this lab.  To do this in the **Azure Portal** click **Resource groups**.  Select any resources groups you have created.  On the resource group blade click **Delete Resource group**, enter the Resource Group Name and click **Delete**.  Repeat the process for any additional Resource Groups you may have created. **Failure to do this may cause issues with other labs.** |
+| WARNING: You should remove all resources used for this lab.  To do this in the **Azure Portal** click **Resource groups**.  Select any resources groups you have created.  On the resource group blade click **Delete Resource group**, enter the Resource Group Name and click **Delete**.  Repeat the process for any additional Resource Groups you may have created. **Failure to do this may cause issues as spendin all the credit you have.** |
 | --- |
 
 **Results**: You have now completed this lab.
