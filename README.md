@@ -10,3 +10,7 @@
 
 
 [Additional Lab: Configure Vnet Peering and Service Chaining](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
+
+[Additional Lab: Managed Identities](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
+
+[Additional Lab: Azure BluePrints](https://github.com/cemvarol/AZ-304-Labs/blob/master/NwLab/NwLab.md)
