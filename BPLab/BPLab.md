@@ -30,7 +30,7 @@ The first step in defining a standard pattern for compliance is to compose a blu
 
     If prompted, select Start with a blank blueprint.
 
-       ![Screenshot](../Media/Module-2/7d8f3904-0a07-40a6-b58c-53a47122cceb.png)
+       ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/7d8f3904-0a07-40a6-b58c-53a47122cceb.png)
 
 1.  Provide a **Blueprint name** such as **MyBlueprint**. (Use up to 48 letters and numbers, but no spaces or special characters). Leave **Blueprint description** blank for now.
 
@@ -50,7 +50,7 @@ The first step in defining a standard pattern for compliance is to compose a blu
 
    1. Select **Add** to add this artifact to the blueprint.
 
-      ![Screenshot](../Media/Module-2/c4afe4ee-fbb9-4843-adbe-169eb7af3f78.png)
+      ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/c4afe4ee-fbb9-4843-adbe-169eb7af3f78.png)
 
         **Note**: Most artifacts support parameters. A parameter that's assigned a value during blueprint creation is a *static parameter*. If the parameter is assigned during blueprint assignment, it's a *dynamic parameter*.
 
@@ -144,11 +144,11 @@ The first step in defining a standard pattern for compliance is to compose a blu
 
 1. Select **Add** to add this artifact to the blueprint.
 
-      ![Screenshot](../Media/Module-2/1bcd8780-80c5-4826-a02a-dfba4541583f.png)
+      ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/1bcd8780-80c5-4826-a02a-dfba4541583f.png)
 
 1.  Your completed blueprint should look similar to the following. Notice that each artifact has **_x_ out of _y_ parameters populated** in the **Parameters** column. The dynamic parameters are set during each assignment of the blueprint.
 
-       ![Screenshot](../Media/Module-2/822f3257-1fa4-4a80-95e5-912152719ecb.png)
+       ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/822f3257-1fa4-4a80-95e5-912152719ecb.png)
 
 1.  Now that all planned artifacts have been added, select **Save Draft** at the bottom of the page.
 
@@ -180,11 +180,11 @@ In Create a blueprint, you didn't provide a description or add the role assignme
 
 1. Select **Add** to add this artifact to the blueprint.
 
-   ![Screenshot](../Media/Module-2/d4ef486c-8f45-45d2-800e-80d639ee9b6e.png)
+   ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/d4ef486c-8f45-45d2-800e-80d639ee9b6e.png)
 
 1.  Your completed blueprint should look similar to the following. Notice that the newly added role assignment shows **1 out of 1 parameters populated**. That means it's a static parameter.
 
-       ![Screenshot](../Media/Module-2/9a76e9be-3361-44c0-920d-6eb9274e6aca.png)
+       ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/9a76e9be-3361-44c0-920d-6eb9274e6aca.png)
    
 1.  Select **Save Draft** now that it has been updated.
 
@@ -227,7 +227,7 @@ After a blueprint has been published, it can be assigned to a subscription. Assi
 
     e. Select **Create** at the bottom of the page.
 
-    ![Screenshot](../Media/Module-2/2b2cebe1-4f92-4e72-b583-3d4767cca69b.png)
+    ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/2b2cebe1-4f92-4e72-b583-3d4767cca69b.png)
 
     **Important**: The new subscription is created immediately after you select **Create**.
 
@@ -242,7 +242,7 @@ After a blueprint has been published, it can be assigned to a subscription. Assi
 
 1.  For **Lock Assignment**, leave the default of **Don't Lock**. 
 
-       ![Screenshot](../Media/Module-2/44d5f739-7956-4264-b4e1-bec56a0341db.png)
+       ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/44d5f739-7956-4264-b4e1-bec56a0341db.png)
 
 1.  Under **Managed Identity**, leave the default of **System assigned**.
 
@@ -275,7 +275,7 @@ When a blueprint has been assigned to one or more subscriptions, two things happ
 1.  In the list of blueprints, right-click the one that you previously assigned and select **View
    assignment details**.
 
-       ![Screenshot](../Media/Module-2/03a7cf44-e3da-48e6-a622-f6b03a5752ce.png)
+       ![Screenshot](https://raw.githubusercontent.com/MicrosoftLearning/AZ-500-Azure-Security/master/Instructions/Labs/Media/Module-2/03a7cf44-e3da-48e6-a622-f6b03a5752ce.png)
 
 1.  On the **Blueprint assignment** page, validate that all artifacts were successfully deployed and
    that there were no errors during the deployment. If errors occurred, see [Troubleshooting blueprints](./troubleshoot/general.md)
