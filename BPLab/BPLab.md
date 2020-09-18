@@ -89,7 +89,7 @@ The first step in defining a standard pattern for compliance is to compose a blu
 
    1. On the **Template** tab in the editor box, paste the following Resource Manager template.  After you paste the template, select the **Parameters** tab and note that the template parameters **storageAccountType** and **location** were detected. Each parameter was  automatically detected and populated, but configured as a dynamic parameter.
 
-```sh
+```json
               {
                   "$schema": "https://schema.management.azure.com/schemas/      2015-01-01/deploymentTemplate.json#",
                   "contentVersion": "1.0.0.0",
