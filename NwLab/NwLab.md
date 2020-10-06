@@ -151,7 +151,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Configure Windows Firewall with Advanced Security on the target Azure VMs
   
-1. On the lab computer, from the Azure portal, start a Remote Desktop session to **VM-A**. 
+1. On the lab computer, from the Azure portal, start a Remote Desktop session to **VM-B**. 
 
 2. When prompted to authenticate, specify the following credentials:
 
@@ -159,13 +159,13 @@ The main tasks for this exercise are as follows:
 
     - Password: **1q2w3e4r5t6y***
 
-3. In the Remote Desktop session to VM-A, run the **powershell** command below on that vm
+3. In the Remote Desktop session to VM-B, run the **powershell** command below on that vm
 
 **Set-NetFirewallProfile -Enabled False**
 
 #### Task 2: Test service chaining between peered virtual networks
   
-1. On the lab computer, from the Azure portal, start a Remote Desktop session to **VM-B**. 
+1. On the lab computer, from the Azure portal, start a Remote Desktop session to **VM-A**. 
 
 1. When prompted to authenticate, specify the following credentials:
 
@@ -173,7 +173,7 @@ The main tasks for this exercise are as follows:
 
     - Password: **1q2w3e4r5t6y***
 
-1. Once you are connected to **VM-B** via the Remote Desktop session, start **Windows PowerShell**.
+1. Once you are connected to **VM-A** via the Remote Desktop session, start **Windows PowerShell**.
 
 1. In the **Windows PowerShell** window, run the following:
 
