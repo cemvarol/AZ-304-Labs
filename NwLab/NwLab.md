@@ -140,6 +140,25 @@ Run these commands below on **powershell** console of that VM
 > **Result**: After completing this exercise, you should have configured custom routing within the second virtual network.
 
 
+#### Task 4: Turn off OS firewall on VM-X
+
+1. On the lab computer, from the Azure portal, start a Remote Desktop session to **VM-X** Azure VM. 
+
+2. When prompted to authenticate, specify the following credentials:
+
+    - User name: **QA**
+
+    - Password: **1q2w3e4r5t6y***
+
+3. Once you are connected to VM-R via the Remote Desktop session, 
+Run these commands below on **powershell** console of that VM
+
+---
+ 
+**Set-NetFirewallProfile -Enabled False**
+
+----
+
 ## Exercise 4: Validating service chaining
   
 The main tasks for this exercise are as follows:
