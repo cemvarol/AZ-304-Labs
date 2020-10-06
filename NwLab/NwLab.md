@@ -159,7 +159,7 @@ The main tasks for this exercise are as follows:
 
     - Password: **1q2w3e4r5t6y***
 
-3. In the Remote Desktop session to VM-B, run the **powershell** command below on that vm
+3. In the Remote Desktop session to VM-A, run the **powershell** command below on that vm
 
 **Set-NetFirewallProfile -Enabled False**
 
@@ -173,7 +173,7 @@ The main tasks for this exercise are as follows:
 
     - Password: **1q2w3e4r5t6y***
 
-1. Once you are connected to **VM-A** via the Remote Desktop session, start **Windows PowerShell**.
+1. Once you are connected to **VM-B** via the Remote Desktop session, start **Windows PowerShell**.
 
 1. In the **Windows PowerShell** window, run the following:
 
