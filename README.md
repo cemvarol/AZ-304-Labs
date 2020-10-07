@@ -16,3 +16,5 @@
 [Additional Lab: Azure BluePrints](https://github.com/cemvarol/AZ-304-Labs/blob/master/BPLab/BPLab.md)
 
 [Additional Lab: S2S & P2S VPN](https://github.com/cemvarol/AZ-304-Labs/blob/master/S2S-P2SLab/ReadMe.md)
+
+[Additional Lab: Offline Migration](https://github.com/cemvarol/AZ-304-Labs/blob/master/OfflineMig/Instructions.md)
