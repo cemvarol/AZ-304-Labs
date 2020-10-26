@@ -370,7 +370,7 @@ The main tasks for this exercise are as follows:
 1.  Navigate to newly created virtual Machine, **2012-R2**
 2.  Click **Networking**
 3.  Choose Network Interface. You will see a complex name.
-4.  Click IP Configurations, click the ip address.
+4.  Click **IP Configurations**, click the *ip address*.
 5.  Set Public Ip address by clicking **Associate**
 6.  Choose Migrated-Pip and click **Save**
 7.  After Completed. Navigate to the Traffic manager. **Lab-03-TM**
