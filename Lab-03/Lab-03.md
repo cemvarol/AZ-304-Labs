@@ -103,6 +103,7 @@ $output = "C:\Lab03\Lab03.ps1"
 Invoke-WebRequest -Uri $url -OutFile $output
 Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
   ```
+  
 > **Note:** This will take approximetaly 6-8 minutes. When finished Hyper-V Console will appear.
 
 6.  In the Virtual Machine Connection window to **2012-R2**, on
@@ -242,7 +243,7 @@ The main tasks for this exercise are as follows:
           - Complete the rest of the steps on the wizard with default selections.
           
           - Click **Finish** when the installation completes
-          > **Note:** If your host, **Migrator** does not appear, refresh the page and reach to this level again.
+          > **Note:** If your host, **Migrator** does not appear, click *Previos* and get back to step 3 by clicking *Next* and choose your Hyper-V Site from the drop down menu, your server will appear.
     
    3. **Target Settings**
          - This will chooses the existing selected/default subscription and checks if you have a storage account and a Virtual Network at the location available. Leave with the default setting with default values. Click **Next**.
