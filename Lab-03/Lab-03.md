@@ -195,13 +195,11 @@ The main tasks for this exercise are as follows:
 
 2.  Enable replication
 
-3.  Remove Azure resources deployed in the lab
+3.  Review Azure VM replication settings
 
-4.  Review Azure VM replication settings
+4.  Perform the Failover of the Hyper-V virtual machine
 
-5.  Perform the Failover of the Hyper-V virtual machine
-
-6.  Remove Azure resources deployed in the lab
+5.  Check the Migration
 
 
 #### Task 1: Prepare Infrastructure
@@ -363,7 +361,7 @@ The main tasks for this exercise are as follows:
 
 > Note: This will complete the traffic and replication between the source and newly created VM.
 
-#### Task 6: Check the Migration
+#### Task 5: Check the Migration
 
 1.  Navigate to newly created virtual Machine, **2012-R2**
 2.  Click **Networking**
@@ -383,7 +381,13 @@ The main tasks for this exercise are as follows:
 > **Optional:** You can RDP to the 2012-R2 Vm with the password you provided. UserName will be **Administrator** and change the file content under c:\inetpub\wwwroot\iistart.html, to see that it is exactly publiching the page from the migrated server.
 
 
-#### Task 6: Remove Azure resources deployed in the lab
+### Exercise 3: Remove Azure resources deployed in the lab
+
+The main tasks for this exercise are as follows:
+
+1.  Remove Azure resources deployed in the lab
+
+#### Task 1: Remove Azure resources deployed in the lab
 
 1.  Navigate back to the **BCDR**
 
