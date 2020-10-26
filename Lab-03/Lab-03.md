@@ -237,7 +237,9 @@ The main tasks for this exercise are as follows:
       
           - On the Provider installation page, select **Install**.
 
-          - Click **Register** when the wizard asks. Select Browse, navigate to the **Downloads**, select the *vault credentials file*, and click **Open**. Complete the rest of the steps on the wizard with default selections.
+          - Click **Register** when the wizard asks. Select Browse, navigate to the **Downloads**, select the *vault credentials file*, and click **Open**. 
+          
+          - Complete the rest of the steps on the wizard with default selections.
           
           - Click **Finish** when the installation completes
           > **Note:** If your host, **Migrator** does not appear, refresh the page and reach to this level again.
