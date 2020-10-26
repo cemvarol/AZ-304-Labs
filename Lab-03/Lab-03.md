@@ -325,7 +325,7 @@ The main tasks for this exercise are as follows:
     protection or **Protected.**
 
 > **Note**: You will need to wait until status is listed as
-> **Protected** before the next step. This might take additional 5
+> **Protected** before the next step. This might take additional 5 - 10
 > minutes
 
 3.  Select the **2012-R2** entry.
