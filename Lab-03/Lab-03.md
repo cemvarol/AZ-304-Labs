@@ -243,7 +243,7 @@ The main tasks for this exercise are as follows:
           - Complete the rest of the steps on the wizard with default selections.
           
           - Click **Finish** when the installation completes
-          > **Note:** If your host, **Migrator** does not appear, click *Previos* and get back to step 3 by clicking *Next* and choose your Hyper-V Site from the drop down menu, your server will appear.
+          > **Note:** If your host, **Migrator** does not appear, click *Previous* and get back to step 3 by clicking *Next* and choose your Hyper-V Site from the drop down menu, your server will appear.
     
    3. **Target Settings**
          - This will chooses the existing selected/default subscription and checks if you have a storage account and a Virtual Network at the location available. Leave with the default setting with default values. Click **Next**.
