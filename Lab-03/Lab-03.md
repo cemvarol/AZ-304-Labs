@@ -104,9 +104,9 @@ Invoke-WebRequest -Uri $url -OutFile $output
 Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
   ```
   
-> **Note:** This will take approximetaly 8-10 minutes. When finished Hyper-V Console will appear.
+**This will take approximetaly 8-10 minutes. When finished Hyper-V Console will appear.**
 
-**Please Do not take any action until then**
+##### Please Do not take any action until then #####
 
 6.  In the Virtual Machine Connection window to **2012-R2**, on
     the **License terms** page, select **United Kingdom** and click *Next* to **Accept**.
