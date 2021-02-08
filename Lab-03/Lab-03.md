@@ -104,7 +104,9 @@ Invoke-WebRequest -Uri $url -OutFile $output
 Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
   ```
   
-> **Note:** This will take approximetaly 6-8 minutes. When finished Hyper-V Console will appear.
+> **Note:** This will take approximetaly 8-10 minutes. When finished Hyper-V Console will appear.
+
+**Please Do not take any action until then**
 
 6.  In the Virtual Machine Connection window to **2012-R2**, on
     the **License terms** page, select **United Kingdom** and click *Next* to **Accept**.
@@ -115,8 +117,6 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 8.  After Restart, sign in by using the newly set password.
 
 -   Note: Your Guest Vm will be restarted once more automatically and will be ready after this step.
-
-**Please Do not take any action until then**
 
 
 #### Task 3: Check the output
