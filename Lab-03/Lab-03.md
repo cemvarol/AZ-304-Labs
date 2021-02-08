@@ -108,13 +108,16 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 
 ##### Please Do not take any action until then #####
 
-6.  In the Virtual Machine Connection window to **2012-R2**, on
-    the **License terms** page, select **United Kingdom** and click *Next* to **Accept**.
+6.  In the Hyper-V Console Click **Migrator**
 
-7.  Set the password of the built-in Administrator account
+7.  Double click **2012-R2** to open Virtual Machine Connection window.
+
+8.  On the **License terms** page, select **United Kingdom** and click *Next* to **Accept**.
+
+9.  Set the password of the built-in Administrator account
     to **London2020\*** and select **Finish**.
 
-8.  After Restart, sign in by using the newly set password.
+10.  After Restart, sign in by using the newly set password.
 
 -   Note: Your Guest Vm will be restarted once more automatically and will be ready after this step.
 
