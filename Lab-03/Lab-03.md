@@ -104,9 +104,9 @@ Invoke-WebRequest -Uri $url -OutFile $output
 Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
   ```
   
-**This will take approximetaly 8-10 minutes. When finished Hyper-V Console will appear.**
+**This will take approximetaly 8-10 minutes may be a little more. When finished Hyper-V Console will appear.**
 
-##### Please Do not take any action until then #####
+**Please Do not take any action until then**
 
 6.  In the Hyper-V Console Click **Migrator**
 
