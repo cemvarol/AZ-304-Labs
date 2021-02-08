@@ -115,6 +115,7 @@ Start-Process Powershell.exe -Argumentlist "-file C:\Lab03\Lab03.ps1"
 8.  After Restart, sign in by using the newly set password.
 
 -   Note: Your Guest Vm will be restarted once more automatically and will be ready after this step.
+        **Please Do not take any action until then**
 
 
 #### Task 3: Check the output
