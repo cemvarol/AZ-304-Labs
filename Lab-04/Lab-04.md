@@ -9,11 +9,11 @@ lab:
 
 ## Lab scenario
 
-As part of its migration to Azure, Adatum Corporation needs to define its identity strategy. Adatum has a single domain Active Directory forest named adatum.com and owns the corresponding, publicly registered DNS domain. As the Adatum Enterprise Architecture team is exploring the option of transitioning some of the on-premises workloads to Azure, it intends to evaluate integration between its Active Directory Domain Services (AD DS) environment and the Azure Active Directory (Azure AD) tenant associated with the target Azure subscription as the core component of its longer-term authentication and authorization model.
+As part of its migration to Azure, Aurian Corporation needs to define its identity strategy. Aurian has a single domain Active Directory forest named Aurian.club and owns the corresponding, publicly registered DNS domain. As the Aurian Enterprise Architecture team is exploring the option of transitioning some of the on-premises workloads to Azure, it intends to evaluate integration between its Active Directory Domain Services (AD DS) environment and the Azure Active Directory (Azure AD) tenant associated with the target Azure subscription as the core component of its longer-term authentication and authorization model.
 
 The new model should facilitate single sign-on, along with per-application step-up authentication that leverages multi-factor authentication capabilities of Azure AD. To implement single sign-on, the Architecture team plans to deploy Azure AD Connect and configure it for password hash synchronization, resulting in matching user objects in both identity stores. Choosing the optimal authentication method is the first concern for organizations wanting to move to the cloud. Azure AD password hash synchronization is the simplest way to implement single sign-on authentication for on-premises users when accessing Azure AD-integrated resources. This method is also required by some premium Azure AD features, such as Identity Protection.
 
-To implement step-up authentication, the Adatum Enterprise Architecture team intends to take advantage of Azure AD Conditional Access policies. Conditional Access policies support enforcement of multi-factor authentication depending on the type of application or resource being accessed. Conditional Access policies are enforced after the first-factor authentication has been completed. Conditional Access can be based on a wide range of factors, including:
+To implement step-up authentication, the Aurian Enterprise Architecture team intends to take advantage of Azure AD Conditional Access policies. Conditional Access policies support enforcement of multi-factor authentication depending on the type of application or resource being accessed. Conditional Access policies are enforced after the first-factor authentication has been completed. Conditional Access can be based on a wide range of factors, including:
 
 - User or group membership. Policies can be targeted to specific users and groups giving administrators fine-grained control over access.
 - IP Location information. Organizations can create trusted IP address ranges that can be used when making policy decisions. Administrators can specify entire countries/regions IP ranges to block or allow traffic from.
@@ -22,7 +22,7 @@ To implement step-up authentication, the Adatum Enterprise Architecture team int
 - Real-time and calculated risk detection. Signals integration with Azure AD Identity Protection allows Conditional Access policies to identify risky sign-in behavior. Policies can then force users to perform password changes or multi-factor authentication to reduce their risk level or be blocked from access until an administrator takes manual action.
 - Microsoft Cloud App Security (MCAS). Enables user application access and sessions to be monitored and controlled in real time, increasing visibility and control over access to and activities performed within your cloud environment.
 
-To accomplish these objectives the Adatum Enterprise Architecture team intends to test integration of its Active Directory Domain Services (AD DS) forest with its Azure Active Directory (Azure AD) tenant and evaluate the conditional access functionality for its pilot users.
+To accomplish these objectives the Aurian Enterprise Architecture team intends to test integration of its Active Directory Domain Services (AD DS) forest with its Azure Active Directory (Azure AD) tenant and evaluate the conditional access functionality for its pilot users.
 
 ## Objectives
 
@@ -185,13 +185,13 @@ The main tasks for this exercise are as follows:
 
 1. Select **+ Add custom domain**.
 
-1. Type **adatum.com**, and select **Add domain**. 
+1. Type **Aurian.club**, and select **Add domain**. 
 
-1. On the **adatum.com** blade, review the information necessary to perform verification of the Azure AD domain name and close the blade.
+1. On the **Aurian.club** blade, review the information necessary to perform verification of the Azure AD domain name and close the blade.
 
-    > **Note**: You will not be able to complete the validation process because you do not own the **adatum.com** DNS domain name. This will *not* prevent you from synchronizing the **adatum.com** Active Directory domain with the Azure AD tenant. You will use for this purpose the default primary DNS name of the Azure AD tenant (the name ending with the **onmicrosoft.com** suffix), which you identified earlier in this task. However, keep in mind that, as a result, the DNS domain name of the Active Directory domain and the DNS name of the Azure AD tenant will differ. This means that Adatum users will need to use different names when signing in to the Active Directory domain and when signing in to Azure AD tenant.
+    > **Note**: You will not be able to complete the validation process because you do not own the **Aurian.club** DNS domain name. This will *not* prevent you from synchronizing the **Aurian.club** Active Directory domain with the Azure AD tenant. You will use for this purpose the default primary DNS name of the Azure AD tenant (the name ending with the **onmicrosoft.com** suffix), which you identified earlier in this task. However, keep in mind that, as a result, the DNS domain name of the Active Directory domain and the DNS name of the Azure AD tenant will differ. This means that Aurian users will need to use different names when signing in to the Active Directory domain and when signing in to Azure AD tenant.
    
-   > **Note**: As explained earlier, this is expected, since you could not verify the custom Azure AD DNS domain **adatum.com**.
+   > **Note**: As explained earlier, this is expected, since you could not verify the custom Azure AD DNS domain **Aurian.club**.
 
 #### Task 2:  Install Azure AD Connect
 
