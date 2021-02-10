@@ -180,7 +180,7 @@ The main tasks for this exercise are as follows:
        
      <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
      </PropertyGroup>   
        
    <ItemGroup>
