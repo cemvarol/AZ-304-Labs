@@ -67,7 +67,7 @@ The main tasks for this exercise are as follows:
     | Server name | any valid, globally unique name: e.g *cvaz092001dbs01* | 
     | Server admin login | **sqladmin** |
     | Password | **1q2w3e4r5t6y*** |
-    | Location | **EastUs** is a good choice |
+    | Location | **EastUs2** is a good choice |
     | Allow Azure services to access server | ***If asked, Select the checkbox*** |
 
 1. Next to the **Compute + storage** label, select the **Configure database** link.
