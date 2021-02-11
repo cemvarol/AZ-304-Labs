@@ -142,7 +142,7 @@ Get-AzSubscription
 
 #### Task 4: Register the Microsoft.EventGrid resource provider
 
-1.  In the Azure portal, reopen the **PowerShell** session within
+1.  Go back to the **PowerShell** session within
     the **Cloud Shell**.
 
 2.  From the Cloud Shell pane, run the following to register the
