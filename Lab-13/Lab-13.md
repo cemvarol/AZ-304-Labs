@@ -124,7 +124,6 @@ Get-AzSubscription
 
 > **E.g:** 23b4659a-7355-43a3-885d-ac33078e0f3b
 
-7.  Close the Cloud Shell pane.
 
 #### Task 3: Assign the Reader role to the Azure AD service principal
 
