@@ -22,9 +22,12 @@ Write-Output $secretValueText
 
 
 
+```powershell
 
 $secret = Get-AzKeyVaultSecret -VaultName "<your-unique-keyvault-name>" -Name "<your secret name>"
 
 
  $secret = Get-AzKeyVaultSecret -VaultName "<your-unique-keyvault-name>" -Name "<your secret name>"
 
+
+```
