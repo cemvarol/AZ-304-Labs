@@ -5,7 +5,7 @@ If interested,
 
 Key vault commands
 
-
+```powershell
 $secret = Get-AzKeyVaultSecret -VaultName cvaz0221x2kv -Name cemo
 $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)
 try {
@@ -14,6 +14,7 @@ try {
    [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ssPtr)
 }
 Write-Output $secretValueText
+```
 
 
 
@@ -21,6 +22,5 @@ Write-Output $secretValueText
 
 
 
-
-$secret = Get-AzKeyVaultSecret -VaultName "<your-unique-keyvault-name>" -Name "<your secret name>"
+ $secret = Get-AzKeyVaultSecret -VaultName "<your-unique-keyvault-name>" -Name "<your secret name>"
 
