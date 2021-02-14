@@ -3,7 +3,7 @@ A=$(echo "$a" | sed -e 's/\(.*\)/\L\1/')
 B=${A:$(echo `expr index "$A" @`)}
 C=${B:: -24}
 D=$(echo "$C"id01)
-L=eastus
+L=westeurope
 
 
 az group create --name IDLab1 --location $L
