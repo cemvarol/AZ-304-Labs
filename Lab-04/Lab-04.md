@@ -369,8 +369,9 @@ The main tasks for this exercise are as follows:
 
     > **Note**: Completing the multi-factor authentication configuration is optional. If you proceed, you will need to designate your mobile device as an authentication phone or to use it to run a mobile app.
 
+### Exercise 3: Remove Azure resources deployed in the lab
 
-#### Task 4: Remove Azure resources deployed in the lab
+#### Task 1: Delete the Resource Group
 
 1. Delete the Resource Group **AZ-304Lab-04**
 
