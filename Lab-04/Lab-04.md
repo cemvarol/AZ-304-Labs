@@ -372,44 +372,6 @@ The main tasks for this exercise are as follows:
 
 #### Task 4: Remove Azure resources deployed in the lab
 
-1. Within the Remote Desktop session to **US-DC01**, browse to the at [Microsoft Online Services Sign-In Assistant for IT Professionals RTW](https://go.microsoft.com/fwlink/p/?LinkId=286152). 
-
-1. Click **Download**, Select **en\msoidcli_64.msi**, and click **Next**. 
-
-1. Run the downloaded file **Microsoft Online Services Sign-in Assistant Setup** with the *default options*
-
-1. Once the setup completes, Start **Windows PowerShell** console.
-
-1. Run the following to install the required PowerShell module:
-
-   ```powershell
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-    Install-Module MSOnline -Force
-    ```
-1. Run the following to authenticate to the Azure AD tenant:
-
-   ```powershell
-   Connect-MsolService
-   ```
-1. When prompted to authenticate, provide the credentials of the **superman** account with AAD domain extension.
-    - If any browser problem occurs, here down the solution. Else go to the next step
-        - Click Server Manager on the Start Menu, to start Server Manager.
-        - Close the small dialog box with the message "Try managing servers with admin center"
-        - Click Local Server
-        - Set IE Enchanted Security Configuration to OFF
-        
-1. After signing in, run the following to disable Azure AD Connect synchronization:
-
-   ```powershell
-   Set-MsolDirSyncEnabled -EnableDirSync $false -Force
-   ```
-1. On the **Users - All users** blade, select each user account you synchronized click **Delete** in the toolbar.
-
-    > **Note:** The synchronized accounts will be labelled as **Yes** under **Directory Synched** column
-
-1. Within the Remote Desktop session to **US-DC01**, navigate to Azure portal
-
 1. Delete the Resource Group **AZ-304Lab-04**
 
    >**Note**: This will automatically delete the remote server and your remote session will be terminated.
