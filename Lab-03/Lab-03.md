@@ -149,7 +149,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure Site Recovery vault
 
-1.  Within the Remote Desktop session to **Migrator**, navigate to
+1.  Within the Remote Desktop session to **Migrator** (the host, not 2012R2), navigate to
     the [**Azure Portal**](https://portal.azure.com), and sign in.
     
 2.  Click +New and search for **Backup and Site Recovery** and click **Create**
