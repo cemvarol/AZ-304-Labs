@@ -371,9 +371,11 @@ The main tasks for this exercise are as follows:
 
 ### Exercise 3: Remove Azure resources deployed in the lab
 
-#### Task 1: Delete the Resource Group
+#### Task 1: Delete the Resources
 
 1. Delete the Resource Group **AZ-304Lab-04**
 
    >**Note**: This will automatically delete the remote server and your remote session will be terminated.
+
+1. You can delete the users synched to Azure Active Directory. (optional step) 
 
