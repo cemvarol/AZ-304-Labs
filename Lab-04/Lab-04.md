@@ -257,9 +257,9 @@ The main tasks for this exercise are as follows:
 
 1. Under *Azure Active Directory* click **Groups** blade, choose **All AdUsers** click **Member**. Observe the sycnhronized users. 
 
-1. Within the Remote Desktop session to **US-DC01**, double click **Active Directory users and Computers** shortcut, navigate to Groups, and double click the **All Users** group. Click *Members*.
+1. Within the Remote Desktop session to **US-DC01**, double click **Active Directory users and Computers** shortcut, navigate to Groups, and double click the **All AdUsers** group. Click *Members*.
 
-1. Compare the difference between the members of Azure AD group and Local AD group called **All Users**
+1. Compare the difference between the members of Azure AD group and Local AD group called **All AdUsers**
 
  > **Note**: Groups are also objects to synchronize. Only the synchronized members are listed on Azure AD Group, however you have 50 members on-premises group has. 
  
@@ -267,7 +267,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Group Type | **Security** |
-    | Group Name | **All Users** |
+    | Group Name | **Thirties** |
     | Group Decription | Optional Value, can be left empty |
     | Membership Type | **Dynamic User** |
  
@@ -334,7 +334,7 @@ The main tasks for this exercise are as follows:
 
 1. In the **Assignments** section, select **Select Users and groups**, 
     - On the **Include** tab, check **Users and groups** checkbox
-    - Select **All Users** Group, and click **Select**. (Use the search bar if list is too crowded)
+    - Select **user23** Group, and click **Select**. (Use the search bar if list is too crowded)
 
 1. In the **Cloud apps or actions** section, select **Select Apps**
    - On the **Include** tab, select **Select apps** 
@@ -355,7 +355,7 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value |
     | --- | --- |
-    | User Name | **user22@AZURE-AD-DOMAIN-NAME** |
+    | User Name | **user23@AZURE-AD-DOMAIN-NAME** |
     | Password | **London2020*** |
 
 1. Verify that you can successfully sign in to the Access Panel Applications portal. 
