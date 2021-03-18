@@ -234,6 +234,7 @@ The main tasks for this exercise are as follows:
       
                 -   Click download the installer to download the installer on **Step 3**
                     -   If it does not start downloading right click "Download" and choose **Open Link in new Tab**
+                    -   If it still does not start downloading, right click and choose "save as"
       
                 -   Click the Big Blue **Download** Button to download the registration file
 
