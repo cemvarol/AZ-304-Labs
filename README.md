@@ -1,4 +1,4 @@
-#### Simplified Content for AZ-303 Labs
+#### Simplified Content for AZ-304 Labs
 
 [Lab-03: Migrating Hyper-V VMs to Azure by using Azure Migrate](https://github.com/cemvarol/AZ-304-Labs/blob/master/Lab-03/Lab-03.md)
 
