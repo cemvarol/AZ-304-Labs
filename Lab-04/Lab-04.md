@@ -281,13 +281,13 @@ The main tasks for this exercise are as follows:
 
 >**Note:** If save seems passive, click the **Rule Syntax** field and Save will be available. 
 
-1. You will be diverted back to New Group Create page,click **Create**.
+5. You will be diverted back to New Group Create page,click **Create**.
 
 >**Note:** Dynamic Group will be populated depending on the attribute value of Local AD accounts.
 
-1. Within the Remote Desktop session to **US-DC01** Open **Active Directory users and Computers** console
+6. Within the Remote Desktop session to **US-DC01** Open **Active Directory users and Computers** console
 
-1. Go to the OU for **3-Thirties** and choose random one or more accounts, and change the value of Department with something else but Thirties.
+7. Go to the OU for **3-Thirties** and choose random one or more accounts, and change the value of Department with something else but Thirties.
     -Under **Organization** Tab, Change the value to for **Department** Attribute.
     
 > **Note** That change will reflect to Azure Active Directory on the next synchronization cycle. This happens automatically two times in every hour. You can trigger manually if you prefer. 
