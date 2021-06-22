@@ -297,7 +297,10 @@ The main tasks for this exercise are as follows:
 1. Within the Remote Desktop session to **US-DC01**, start *Windows PowerShell* and, run the following to start Azure AD Connect delta synchronization:
 
    ```powershell
-   Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
+   
+   cd "C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync"
+   
+   Import-Module -Name ADSync.psd1
 
    Start-ADSyncSyncCycle -PolicyType Delta
    ```
