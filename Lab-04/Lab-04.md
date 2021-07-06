@@ -226,6 +226,8 @@ The main tasks for this exercise are as follows:
 
 #### Task 3:  Configure Azure AD Connect
 
+On the Remote Desktop Session where you installed AD Connect, 
+
 1. Double-Click the **Azure Ad Connect** to configure the settings of Azure AD Connect.
 
 1. On the **Welcome to Azure AD Connect** step, click **Configure**
