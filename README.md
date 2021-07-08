@@ -23,4 +23,4 @@
 
 [Additional Lab: Azure to Azure Migration](https://github.com/cemvarol/AZ-304-Labs/blob/master/A2A/A2AMigration.md)
 
-[Upcoming Lab: Private Endpoint for Azure Resources](https://github.com/cemvarol/AZ-304-Labs/blob/master/A2A/A2AMigration.md)
+[Upcoming Lab: Private Endpoint for Azure Resources](https://github.com/cemvarol/AZ-304-Labs/tree/master/PrvEp)
