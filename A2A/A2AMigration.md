@@ -53,7 +53,7 @@ The main tasks for this exercise are as follows:
 
    - Subscription: the name of the target Azure subscription
 
-   - Resource group: Create a new Resource Group  **BCDR-RG**
+   - Resource group: Create a new Resource Group  **BCDRA2A-RG**
 
    - Location: the name of an Azure region that is available in your subscription and which is **DIFFERENT** from the region you deployed an Azure VM in the previous task. (Means not West Europe, which your VM is now at.)
 
