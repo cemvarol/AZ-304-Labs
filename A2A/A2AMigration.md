@@ -85,13 +85,13 @@ The main tasks for this exercise are as follows:
 
    - Azure virtual machine deployment model: **Resource Manager**
 
-   - Source resource group: **BCDRA2A**
+   - Source resource group: **MigrateA2A**
 
    - Virtual machines: **VM01**
 
    - Target location: the name of an Azure region that is available in your subscription and which is different from the region you deployed an Azure VM in the previous task
 
-   - Target resource group: **(new) BCDRA2A-asr**
+   - Target resource group: **(new) MigrateA2A-asr**
 
    - Target virtual network: **(new) A2A-VNet-asr**
 
