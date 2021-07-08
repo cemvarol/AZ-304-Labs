@@ -66,7 +66,7 @@ The main tasks for this exercise are as follows:
 
 1.  From Azure Portal, Click **Create a Resource**.
 
-2.  Search for **Logic App**
+2.  Search for **Logic App (Consumption)**
 
 3.  Create an instance of **Logic App** with the following settings:
 
