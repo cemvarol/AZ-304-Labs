@@ -40,4 +40,4 @@ $pip = New-AzureRmPublicIpAddress -Name $GWIPName  -ResourceGroupName $RG -Locat
 $ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $GWsubnet -PublicIpAddress $pip
 
 #Create the gateway
-New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG -Location $Location -IpConfigurations $ipconf -GatewayType Vpn -VpnType RouteBased -GatewaySku Basic 
+New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG -Location $Location -IpConfigurations $ipconf -GatewayType Vpn -VpnType RouteBased -GatewaySku Standard 
